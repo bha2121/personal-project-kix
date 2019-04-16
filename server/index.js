@@ -2,10 +2,11 @@ require('dotenv').config()
 const express = require('express')
 const massive = require('massive')
 const Ctlr = require('./controllers/controller')
-
+const authCtrl =require('./controllers/authController')
+const session = require('express-session')
 const app = express()
 
-const {SERVER_PORT, CONNECTION_STRING} = process.env
+const {SERVER_PORT, CONNECTION_STRING, SECRET} = process.env
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)
@@ -14,6 +15,19 @@ massive(CONNECTION_STRING).then(db => {
 })
 
 app.use(express.json())
+app.use(session({
+    secret: SECRET,
+    resave: false,
+    saveUninitialized: false
+}))
+
+app.post('/auth/registter', authCtrl.register)
+app.post('/auth/login', authCtrl.login)
+// app.get('/auth/user-data', authCtrl.userData)
+app.get('/logout', (req, res) => {
+  req.session.destroy();
+  res.redirect('http://localhost:3000/#/')
+})
 
 
 
