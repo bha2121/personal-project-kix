@@ -1,15 +1,17 @@
-insert into account
+insert into users
 (
   firstname,
-  lasttname,
+  lastname,
   email,
-  userpassword
+  userpassword,
+  isadmin
 )
 values
 (
   $1,
   $2,
   $3,
-  $4
+  $4,
+  false
 )
-returning firstname;
+returning *

@@ -12,6 +12,7 @@ import Cart from './Components/Cart/Cart'
 
 export default (
     <HashRouter>
+        <Header/>
         <Switch>
             <Route exact path='/' component={Landing} />
             <Route path='/login' component={LoginRegister} />

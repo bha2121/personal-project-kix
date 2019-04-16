@@ -1,3 +1,3 @@
 select *
 from users
-where email = $3
+where email = $1
