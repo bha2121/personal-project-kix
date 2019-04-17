@@ -41,17 +41,28 @@ module.exports = {
         if (!result) {
             return res.status(401).send({message: 'Incorrect password.'})
         }
-        req.session.user = {firstname: accountArr[0].firstname, lastname: accountArr[0].lastname, email: accountArr[0].email, isadmin: accountArr[0].isadmin }
+        req.session.user = { id: accountArr[0].user_id, firstname: accountArr[0].firstname, lastname: accountArr[0].lastname, email: accountArr[0].email, isadmin: accountArr[0].isadmin }
         res.status(200).send({
             message: 'Log in successful.',
             loggedIn: true
-        })
-    }
-    catch(err){
-        return console.log(err)
+            })
+        }
+        catch(err){
+            return console.log(err)
         }
 
-    }
+    },
     
+    userData: (req, res) => {
+        if (req.session.user) res.status(200).send(req.session.user)
+        else res.status(401).send('Please log in');
+    },
+
+    logout: (req, res) => {
+        req.session.destroy()
+        res.redirect('http://localhost:3000/#/')
+    }
+
+
 }
 
