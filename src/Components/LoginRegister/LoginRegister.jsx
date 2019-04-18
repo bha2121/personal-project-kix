@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { getData, toggleLogout } from '../../ducks/userReducer'
+import { connect } from 'react-redux'
 
 
 class LoginRegister extends Component {
@@ -17,15 +19,21 @@ class LoginRegister extends Component {
   async register () {
     const { firstname, lastname, email, password, isadmin } = this.state
     const res = await axios.post('/auth/register', {firstname, lastname, email, password, isadmin})
-    if (res.data.loggedIn) this.props.history.push('/')
+    if (res.data.loggedIn) {
+      this.props.toggleLogout()
+      this.props.history.push('/')
+    }
     else alert(res.data.message)
   }
 
   async login () {
     const { email, password } = this.state
     const res = await axios.post('/auth/login', {email, password})
-    console.log(res)
-    if (res.data.loggedIn) this.props.history.push('/')
+    console.log('LOGIN/REGISTER RES', res)
+    if (res.data.loggedIn) {
+      this.props.toggleLogout()
+      this.props.history.push('/')
+    }
     else alert(res.data.message)
   }
 
@@ -64,7 +72,7 @@ class LoginRegister extends Component {
           <p>
             <span>Password:</span>
             <input name='password' 
-                    type='text' 
+                    type='password' 
                     onChange={this.handleOnChange} />
           </p>
           <button onClick={()=> this.register()}> Register </button>
@@ -80,7 +88,7 @@ class LoginRegister extends Component {
           <p>
             <span>Password:</span>
             <input name='password' 
-                    type='text' 
+                    type='password' 
                     onChange={this.handleOnChange} />
           </p>
           <button onClick={() => this.login()}> Log in </button>
@@ -92,4 +100,8 @@ class LoginRegister extends Component {
   }
 }
 
-export default LoginRegister;
+
+const mapState = (reduxState) => reduxState;
+
+export default connect(mapState, { getData, toggleLogout })(LoginRegister);
+

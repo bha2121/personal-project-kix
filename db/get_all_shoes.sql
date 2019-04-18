@@ -1,0 +1,1 @@
+select brand, model, colorway, sellingprice, img from shoes ;

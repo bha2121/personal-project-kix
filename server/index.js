@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const massive = require('massive')
-const Ctlr = require('./controllers/controller')
+const shoeCtlr = require('./controllers/shoeContoller')
 const authCtrl =require('./controllers/authController')
 const session = require('express-session')
 const app = express()
@@ -10,7 +10,7 @@ const {SERVER_PORT, CONNECTION_STRING, SECRET} = process.env
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)
-    console.log('db is connected')
+    // console.log('db is connected')
     console.log(db.listTables())
 })
 
@@ -22,16 +22,17 @@ app.use(session({
 }))
 
 
+//AUTH ENDPOINTS
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 app.get('/auth/user-data', authCtrl.userData)
 app.get('/logout', authCtrl.logout)
 
 
-// app.get('/logout', (req, res) => {
-//   req.session.destroy();
-//   res.redirect('http://localhost:3000/#/')
-// })
+//SHOE ENDPOINTS
+
+app.get('/api/getallshoes', shoeCtlr.getAllShoes)
+app.get('/api/getshoe')
 
 
 

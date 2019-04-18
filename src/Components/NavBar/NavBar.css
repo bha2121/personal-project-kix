@@ -1,0 +1,102 @@
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+.fixeddiv {
+    position: fixed;
+    width: 100%
+
+}
+
+.logIC{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+
+.logIH{
+    
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.notLIC{
+    
+    width: 100%;
+    height: 68px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    background-color: transparent;
+    color: white;
+    
+}
+
+.notLIH{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.linksNLI{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+
+.linksNLI button{
+    border: none;
+    text-decoration: none;
+    border-radius: 8px;
+    outline-color: transparent;
+    cursor: pointer;
+    font-family: sans-serif;
+    background-color: transparent;
+    color: white;
+    font-weight: 900;
+    letter-spacing: 1px;
+    outline:none;
+    
+
+    
+}
+
+.leftnavitems {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.leftnavitems input{
+    height: 38px;
+
+}
+
+header{
+    /* padding-bottom: 60px; */
+    /* height: 300px */
+}
+
+header img{
+    /* height: 350px; */
+    margin-top: -160px;
+    width: 100%;
+   
+}

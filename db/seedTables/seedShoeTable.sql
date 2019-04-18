@@ -1,19 +1,23 @@
 INSERT INTO shoes (
-    Brand,
-    Model,
-    Colorway,
-    ColorScheme,
-    RetailPrice,
-    ReleaseDate,
-    Picture,
+    brand,
+    model,
+    colorway,
+    size,
+    colorscheme,
+    sellingprice,
+    releaseDate,
+    quantity,
+    img
     
 ) VALUES (
     'Nike',
     'Air Max 97',
     'Off-White',
+    8.5,
     'WHITE/CONE-ICE BLUE',
     190,
     '11/01/2017',
+    1,
     'https://stockx.imgix.net/Nike-Air-Max-97-Off-White-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1545234240'
 ),
 (

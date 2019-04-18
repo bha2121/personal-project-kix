@@ -1,6 +1,6 @@
 import React from 'react'
 import { HashRouter, Switch, Route } from 'react-router-dom'
-import Header from './Components/Header/Header'
+import NavBar from './Components/NavBar/NavBar'
 import Landing from './Components/Landing/Landing'
 import LoginRegister from './Components/LoginRegister/LoginRegister'
 import Browse from './Components/Browse/Browse'
@@ -12,7 +12,7 @@ import Cart from './Components/Cart/Cart'
 
 export default (
     <HashRouter>
-        <Header/>
+        <NavBar/>
         <Switch>
             <Route exact path='/' component={Landing} />
             <Route path='/login' component={LoginRegister} />
