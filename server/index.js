@@ -34,6 +34,10 @@ app.get('/logout', authCtrl.logout)
 app.get('/api/getallshoes', shoeCtlr.getAllShoes)
 app.get('/api/getshoe')
 
+//USER ENDPOINTS
+
+app.get('/api/editUser')
+
 
 
 // app.get(`/api/sneakers`, SC.getSneakers)

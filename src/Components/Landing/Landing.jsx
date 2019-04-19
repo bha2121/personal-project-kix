@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import LandingShoes from '../LandingShoes/LandingShoes'
-
+import './Landing.css'
+// import headerLogo from './jordanHeader.jpeg'
 
 class Landing extends Component {
   constructor(){
@@ -22,30 +23,19 @@ class Landing extends Component {
   }).catch(err => console.log('AXIOS GETALLSHOES ERR', err))
   }
 
-            // <div>
-            //          Dashboard
-            //          <Link to='/wizard'><button>Add New Property</button></Link>
-            //          {this.state.houses.map((item, i) => {
-            //                return <House deleteHouse={this.deleteHouse}
-            //                key={i} house={item} id={item.id}/>
-            //          })}
-            //      </div>
-
-
   render() {
   
     return (
-      <div>
-        <header>
-          <img src="https://stockx-assets.imgix.net/headers/home_2.png?auto=compress%2Cformat" alt=""/>
-        </header>
-        <div>
-          {this.state.shoes.map((item,i) => {
-            return <LandingShoes key={i} 
-                                 shoe={item} 
-                                 id={item.id}/>
-          })}
+      <div className="mainLanding">
+        <header className='landingHeader'> </header> 
+        <div className="rowContainer">
+          <div className="row">
+            {this.state.shoes.map((item,i) => {
+              return <LandingShoes key={i} shoe={item} id={item.id}/>
+            })}
+          </div>
         </div>
+
       </div>
     );
   }

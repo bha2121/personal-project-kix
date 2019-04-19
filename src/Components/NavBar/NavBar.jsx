@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, withRouter} from 'react-router-dom'
 import { getData } from '../../ducks/userReducer'
 import { connect } from 'react-redux'
 import './NavBar.css'
@@ -37,48 +37,48 @@ class NavBar extends Component {
 
   render() {
     const {toggleLogout} = this.props
-    console.log('render props', this.props.history)
+    console.log('render props', this.props)
     // const {id} = this.props.user
     
     return  toggleLogout ?(
-      <div className="fixeddiv">
-        
-      <nav className='logIC'>
-        <div className='logIH'>
+      <nav>
+        <div className="navContainer">
           <div className='leftnavitems'>
             <h1>
               KiX
             </h1>
             <input placeholder='Search for brand, model, etc.'/>
           </div>
-          <div className='linksLI'>
+          <div className='linksContainer'>
             <Link to='/'>
               <button>Home</button>
             </Link>
             <Link to='/browse'>
               <button>Browse</button>
             </Link>
+            <Link to='/myaccount'>
+              <button>My Account</button>
+            </Link>
             <a href="http://localhost:4000/logout">
               <button >Logout</button>
             </a>
+            <Link to='/cart'>
+              <button>Cart</button>
+            </Link>
           </div>
         </div> 
       </nav>
-
-      </div>
     ) 
     : (
-      <div className='fixeddiv'>
-
-      <nav className='notLIC'>
-        <div className='notLIH'>
+      <nav>
+        <div className="navContainer">
           <div className='leftnavitems'>
             <h1>
               KiX
             </h1>
             <input placeholder='Search for brand, model, etc.'/>
           </div>
-          <div type= 'none' className='linksNLI'>
+          <div type= 'none' className='linksContainer'>
             <Link to='/browse'>
               <button>Browse</button>
             </Link>
@@ -86,16 +86,18 @@ class NavBar extends Component {
               <button>About</button>
             </Link>
             <Link to='/login'>
-              <button >Login</button>
+              <button>Sign Up</button>
             </Link>
             <Link to='/login'>
-              <button>Sign Up</button>
+              <button >Login</button>
+            </Link>
+            <Link to='/cart'>
+              <button >Cart</button>
             </Link>
           </div>
         </div>
-      </nav>
       
-      </div>
+      </nav>
     )
   }
 }

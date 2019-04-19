@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { getData, toggleLogout } from '../../ducks/userReducer'
 import { connect } from 'react-redux'
+import './LoginRegister.css'
 
 
 class LoginRegister extends Component {
@@ -50,6 +51,7 @@ class LoginRegister extends Component {
     
     return (
       <div>
+        <header className="loginHeader"></header>
         <div className="register">
           <p>
             <span>First Name:</span>
@@ -75,6 +77,7 @@ class LoginRegister extends Component {
                     type='password' 
                     onChange={this.handleOnChange} />
           </p>
+
           <button onClick={()=> this.register()}> Register </button>
         </div>
 
@@ -91,6 +94,7 @@ class LoginRegister extends Component {
                     type='password' 
                     onChange={this.handleOnChange} />
           </p>
+
           <button onClick={() => this.login()}> Log in </button>
         </div>
 

@@ -1,0 +1,18 @@
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+.shoeTile{
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width: 350px;
+    margin:0;
+}
+
+.shoeTile img{
+    height: 214px;
+    width: 300px;
+}

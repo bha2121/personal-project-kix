@@ -1,0 +1,35 @@
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+.mainLanding{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.landingHeader{
+    height: 275px;
+    border: solid grey 1px;
+    background-image: url(https://stockx-assets.imgix.net/headers/home_2.png?auto=compress%2Cformat);
+    background-size: cover
+
+}
+
+.rowContainer {
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+.row{
+    width:80%;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
