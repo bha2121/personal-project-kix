@@ -27,16 +27,16 @@ app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 app.get('/auth/user-data', authCtrl.userData)
 app.get('/logout', authCtrl.logout)
-
+// app.put('/api/edituser'), authCtrl.editUser
+app.put(`/api/auth/editprofile`, authCtrl.editProfile)
 
 //SHOE ENDPOINTS
 
 app.get('/api/getallshoes', shoeCtlr.getAllShoes)
-app.get('/api/getshoe')
+app.get('/api/sneaker/:shoe_id', shoeCtlr.getOneShoe)
+
 
 //USER ENDPOINTS
-
-app.get('/api/editUser')
 
 
 

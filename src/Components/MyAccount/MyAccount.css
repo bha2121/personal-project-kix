@@ -1,0 +1,142 @@
+.myAccountBody{
+    display: flex;
+    flex-direction: column;
+}
+
+.myAccountHeader{
+    height:68px;
+    width: 100%;
+    background-color: black;
+}
+
+.myAccountMainContainer{
+    display: flex;
+    flex-direction: row;
+    border: solid black 1px;
+    height: 90vh;
+}
+
+.myAccountSideBar{
+    display: flex;
+    flex-direction: column;
+    /* border: solid red 1px; */
+    /* width: 12.5% */
+    width: 19%
+}
+
+.myAccountUserName{
+    /* border: green solid 1px; */
+    height: 10%;
+    background-color: rgb(184, 182, 182);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myAccountNameText{
+    text-align: center;
+    height: 30px;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: white
+}
+
+.myAccountSidebarLinks{
+    display: flex;
+    height: 90%;
+    flex-direction: column;
+    padding-top: 30px;
+    align-items: center;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-weight: 600;
+    background-color: #F9F9F9;
+}
+
+
+.MyProfileBody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.userInfoHeader{
+    height: 10%;
+    width: 100%;
+    border-bottom: solid rgb(184, 182, 182) 1px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* padding-left: 40px; */
+    font-family: sans-serif;
+    font-weight: 900
+}
+
+.myProfileFlagContainer{
+    height:50px;
+    width:100%;
+    padding-left: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+.myProfileFlag{
+    height:50px;
+    width:150px;
+    background-color: #FA9292;
+    margin-top: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 500
+}
+
+.flagTriangle {
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid rgb(248, 110, 110);
+    border-left: 10px solid transparent;
+    margin-top: -10px
+    
+}
+
+.userInfoContainer{
+    display: flex;
+    flex-direction: row;
+    padding-left: 250px;
+    height: 200px;
+    align-items: center;
+    
+}
+
+.userInfo{
+    margin-right: 30px
+}
+
+.userInfoContainer button{
+    margin-top: -95px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.accountFooter{
+    border: solid blue 1px;
+}
+
+

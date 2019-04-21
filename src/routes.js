@@ -17,7 +17,7 @@ export default (
             <Route exact path='/' component={Landing} />
             <Route path='/login' component={LoginRegister} />
             <Route path='/browse' component={Browse} />
-            <Route path='/sneaker' component={Sneaker} />
+            <Route path='/sneaker/:id' component={Sneaker} />
             <Route path='/myaccount' component={MyAccount} />
             <Route path='/profile' component={Profile} />
             <Route path='/portfolio' component={Portfolio} />

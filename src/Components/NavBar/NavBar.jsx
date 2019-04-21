@@ -3,6 +3,8 @@ import { Link, withRouter} from 'react-router-dom'
 import { getData } from '../../ducks/userReducer'
 import { connect } from 'react-redux'
 import './NavBar.css'
+import kixlogo from './kixlogo.png'
+import kix2 from './kix2.png'
 
 
 class NavBar extends Component {
@@ -44,9 +46,7 @@ class NavBar extends Component {
       <nav>
         <div className="navContainer">
           <div className='leftnavitems'>
-            <h1>
-              KiX
-            </h1>
+            <img src={kixlogo} alt=""/>
             <input placeholder='Search for brand, model, etc.'/>
           </div>
           <div className='linksContainer'>
@@ -74,7 +74,7 @@ class NavBar extends Component {
         <div className="navContainer">
           <div className='leftnavitems'>
             <h1>
-              KiX
+              <img src={kixlogo} alt=""/>
             </h1>
             <input placeholder='Search for brand, model, etc.'/>
           </div>

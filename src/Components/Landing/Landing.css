@@ -14,7 +14,7 @@
 
 .landingHeader{
     height: 275px;
-    border: solid grey 1px;
+    /* border: solid grey 1px; */
     background-image: url(https://stockx-assets.imgix.net/headers/home_2.png?auto=compress%2Cformat);
     background-size: cover
 

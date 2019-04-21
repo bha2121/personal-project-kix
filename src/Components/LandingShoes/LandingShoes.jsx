@@ -6,7 +6,7 @@ import './LandingShoes.css'
 function LandingShoes(props){
     return (
     <div className="shoeTile">
-        <Link to='/sneaker'>
+        <Link to={`/sneaker/${props.shoe.shoe_id}`}>
             <div className="shoepic">
                 <img src={props.shoe.img} alt="house"/>
             </div>
