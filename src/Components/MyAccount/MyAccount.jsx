@@ -46,7 +46,7 @@ class MyAccount extends Component {
       const { firstname, lastname, email} = this.state
       const {id} = this.props.user
       const userBody = {id, firstname, lastname, email,}
-      axios.put(`/api/auth/editprofile`, userBody).then(res => {
+      axios.put(`/api/auth/edituser`, userBody).then(res => {
         console.log('edit response', res)
         this.setState({
           // firstname: this.props.user.firstname,
@@ -56,6 +56,10 @@ class MyAccount extends Component {
           lastname: res.data[0].lastname,
           email: res.data[0].email
         })
+        this.setState({
+          editUserToggle: false
+        })
+        this.props.getData()
       })
       .catch(err => console.log('update user ERR', err))
     }
@@ -86,7 +90,7 @@ class MyAccount extends Component {
             <div className="myAccountUserName">
               <div className="myAccountNameText">
                 {/* {`${this.props.user.firstname} ${this.props.user.lastname}`} */}
-                {`${this.state.firstname} ${this.state.lastname}`}
+                {`${this.props.user.firstname} ${this.props.user.lastname}`}
               </div>
             </div>
             <div className="myAccountSidebarLinks">

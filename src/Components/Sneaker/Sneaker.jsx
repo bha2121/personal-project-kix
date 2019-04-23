@@ -12,77 +12,62 @@ class Sneaker extends Component {
       colorway: '',
       colorscheme: '',
       size: '',
-      img: ''
+      img: '',
+      releasedate: '',
+      sellingprice: '',
+      quantity: '',
+      shoe_id: ''
       // shoe: []
     }
   }
 
-  // componentDidMount= async ()=>{
-  //   const shoe_id = this.props.match.params.id;
-  //   axios.get(`/api/sneaker/${shoe_id}`)
-  //   this.setState({
-  //     shoe: res.data
-  //   })
-  // }
-
-
-  // componentDidMount(){
-  //   const shoe_id = this.props.match.params.id;
-  //   axios.get(`/api/sneaker/${shoe_id}`)
-  //   .then(res =>{
-  //     this.setState({
-  //       shoe: res.data
-  //     })
-  //   }).catch(err => console.log('AXIOS GETTHESNEAKER ERR', err))
-  // }
-
-
-  // handleGetSneaker = async () =>{
-  //   const shoe_id = this.props.match.params.id;
-  //   let res = await axios.get(`/api/sneaker/${shoe_id}`)
-  //     this.setState({
-  //       shoe: res.data
-  //     })
-  // }
-
-  // componentDidMount() {
-  //   this.handleGetSneaker();
-  // }
-
-
+  
   componentDidMount = async () => {
     const shoe_id = this.props.match.params.id;
     await axios.get(`/api/sneaker/${shoe_id}`).then(res => {
+      console.log(res.data[0])
       this.setState({
         brand: res.data[0].brand,
         model: res.data[0].model,
         colorway: res.data[0].colorway,
         colorscheme: res.data[0].colorscheme,
         size: res.data[0].size,
-        img: res.data[0].img
-        // shoe: res.data
+        img: res.data[0].img,
+        releasedate: res.data[0].releasedate,
+        sellingprice: res.data[0].sellingprice,
+        quantity: res.data[0].quantity,
+        shoe_id: res.data[0].shoe_id
+        // shoe: res.data[0]
       });
     });
   };
 
+  handleAddToCart = () =>{
 
-
+  }
 
 
 
   render() {
-    // console.log(this.props)
-    console.log( this.state)
+    console.log(this.props)
+    console.log(this.state)
     
     return (
       <div>
         <header className="sneakerHeader"></header>
-        <h1>
-           {this.state.brand} 
-           {this.state.model} 
-           {this.state.colorway} 
-        </h1>
+        <div>
+          <h1>
+           {this.state.brand} {this.state.model} {this.state.colorway}
+          </h1>
+        </div>
         <img src={this.state.img} alt=""/>
+        <button> Add to cart</button>
+        <div>
+
+          <p>SIZE: {this.state.size}</p>
+          <p>COLOR: {this.state.colorscheme}</p>
+          <p>RELEASE DATE: {this.state.releasedate}</p>
+        </div>
       </div>
     )
   }

@@ -28,7 +28,7 @@ app.post('/auth/login', authCtrl.login)
 app.get('/auth/user-data', authCtrl.userData)
 app.get('/logout', authCtrl.logout)
 // app.put('/api/edituser'), authCtrl.editUser
-app.put(`/api/auth/editprofile`, authCtrl.editProfile)
+app.put(`/api/auth/edituser`, authCtrl.editProfile)
 
 //SHOE ENDPOINTS
 

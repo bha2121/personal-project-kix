@@ -5,7 +5,7 @@
 }
 
 .mainLanding{
-    height: 100vh;
+    
     display: flex;
     flex-direction: column;
 }
@@ -16,7 +16,7 @@
     height: 275px;
     /* border: solid grey 1px; */
     background-image: url(https://stockx-assets.imgix.net/headers/home_2.png?auto=compress%2Cformat);
-    background-size: cover
+    background-size: cover;
 
 }
 
@@ -24,9 +24,33 @@
     width:100%;
     display: flex;
     justify-content: center;
+    padding-top: 100px
 }
 
 .row{
+    width:80%;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+.jordanRow{
+    width:80%;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+
+.nikeRow{
+    width:80%;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+
+.adidasRow{
     width:80%;
     height: 350px;
     display: flex;
