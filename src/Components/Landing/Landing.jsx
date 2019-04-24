@@ -19,7 +19,7 @@ class Landing extends Component {
   componentDidMount(){
     axios.get('/api/getallshoes')
     .then(res => {
-      console.log(res.data)
+      // console.log(res.data)
       this.setState({
           shoes: res.data
       })

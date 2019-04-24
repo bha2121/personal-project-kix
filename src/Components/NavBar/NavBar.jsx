@@ -1,45 +1,27 @@
 import React, { Component } from 'react';
-import { Link, withRouter} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { getData } from '../../ducks/userReducer'
 import { connect } from 'react-redux'
 import './NavBar.css'
 import kixlogo from './kixlogo.png'
-import kix2 from './kix2.png'
+
 
 
 class NavBar extends Component {
   
-  // componentDidMount = async () => {
-  //   let worky = await this.props.getData()
-  //   console.log('worky', worky)
-  //   const { id } = this.props.user
-  //   if (worky.value.id) {
-  //   this.setState({
-  //     toggleLogout: true
-  //   })}
-  // }
-
+  
   componentDidMount() {
     this.props.getData()
-    
-    // .then(()=>{
-    //   if (this.props.user.id){
-    //   this.setState({
-    //     toggleLogout: true
-    //   })
-    // }
-    // })
   }
 
 
- 
-  
 
 
 
   render() {
+    // const {toggleLogout} = this.props.user
     const {toggleLogout} = this.props
-    console.log('render props', this.props)
+    // console.log('render props', this.props)
     // const {id} = this.props.user
     
     return  toggleLogout ?(
@@ -103,6 +85,6 @@ class NavBar extends Component {
 }
 
 
-const mapState = (reduxState) => reduxState;
+const mapState = (reduxState) => reduxState.user;
 
 export default connect(mapState, { getData })(NavBar);

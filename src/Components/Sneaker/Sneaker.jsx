@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Sneaker.css'
+import { connect } from 'react-redux'
+import { setCart } from '../../ducks/cartReducer'
 
 
 class Sneaker extends Component {
@@ -25,7 +27,7 @@ class Sneaker extends Component {
   componentDidMount = async () => {
     const shoe_id = this.props.match.params.id;
     await axios.get(`/api/sneaker/${shoe_id}`).then(res => {
-      console.log(res.data[0])
+      // console.log(res.data[0])
       this.setState({
         brand: res.data[0].brand,
         model: res.data[0].model,
@@ -42,15 +44,20 @@ class Sneaker extends Component {
     });
   };
 
-  handleAddToCart = () =>{
-
+  handleAddToCart(shoe_id){
+    axios.post('/api/addtocart', {shoe_id})
+    .then(res =>{
+      this.props.setCart(res.data)
+    })
   }
 
 
 
+
   render() {
-    console.log(this.props)
-    console.log(this.state)
+    // console.log(this.props)
+    // console.log(this.state.shoe_id)
+    const {shoe_id} = this.state
     
     return (
       <div>
@@ -61,7 +68,7 @@ class Sneaker extends Component {
           </h1>
         </div>
         <img src={this.state.img} alt=""/>
-        <button> Add to cart</button>
+        <button onClick={()=> {this.handleAddToCart(shoe_id)}}> Add to cart</button>
         <div>
 
           <p>SIZE: {this.state.size}</p>
@@ -73,4 +80,4 @@ class Sneaker extends Component {
   }
 }
 
-export default Sneaker;
+export default connect (null, { setCart })(Sneaker);

@@ -19,17 +19,21 @@ class MyAccount extends Component {
 
   componentDidMount = async() => {
     await this.props.getData()
-    console.log(this.props.user)
+    // console.log(this.props)
     this.setState({
+      // firstname: this.props.user.user.firstname,
       firstname: this.props.user.firstname,
+      // lastname: this.props.user.user.lastname,
       lastname: this.props.user.lastname,
+      // email: this.props.user.user.email,
       email: this.props.user.email,
+      // isadmin: this.props.user.user.isadmin,
       isadmin: this.props.user.isadmin,
     })
     }
 
     handleEditUserToggle=()=>{
-      console.log('editToggle')
+      // console.log('editToggle')
       this.setState({
         editUserToggle: true
       })
@@ -44,10 +48,11 @@ class MyAccount extends Component {
     
     updateUser=()=> {
       const { firstname, lastname, email} = this.state
+      // const {id} = this.props.user.user
       const {id} = this.props.user
       const userBody = {id, firstname, lastname, email,}
       axios.put(`/api/auth/edituser`, userBody).then(res => {
-        console.log('edit response', res)
+        // console.log('edit response', res)
         this.setState({
           // firstname: this.props.user.firstname,
           // lastname: this.props.user.lastname,
@@ -77,8 +82,8 @@ class MyAccount extends Component {
 
 
   render() {
-    console.log('RENDER OF STATE',this.state)
-    console.log('RENDER OF PROPS>USER', this.props.user)
+    // console.log('RENDER OF STATE',this.state)
+    // console.log('RENDER OF PROPS>USER', this.props.user.user)
     
     const {editUserToggle} = this.state
     // console.log(this.state)
@@ -89,8 +94,8 @@ class MyAccount extends Component {
           <div className="myAccountSideBar">
             <div className="myAccountUserName">
               <div className="myAccountNameText">
-                {/* {`${this.props.user.firstname} ${this.props.user.lastname}`} */}
                 {`${this.props.user.firstname} ${this.props.user.lastname}`}
+                {/* {`${this.props.user.user.firstname} ${this.props.user.user.lastname}`} */}
               </div>
             </div>
             <div className="myAccountSidebarLinks">
@@ -140,6 +145,6 @@ class MyAccount extends Component {
   }
 }
 
-const mapState = (reduxState) => reduxState;
+const mapState = (reduxState) => reduxState.user;
 
 export default connect(mapState, { getData })(MyAccount);

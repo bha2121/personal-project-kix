@@ -1,8 +1,11 @@
 require('dotenv').config()
 const express = require('express')
 const massive = require('massive')
+
 const shoeCtlr = require('./controllers/shoeContoller')
 const authCtrl =require('./controllers/authController')
+const cartCtrl = require('./controllers/cartController')
+
 const session = require('express-session')
 const app = express()
 
@@ -36,7 +39,17 @@ app.get('/api/getallshoes', shoeCtlr.getAllShoes)
 app.get('/api/sneaker/:shoe_id', shoeCtlr.getOneShoe)
 
 
-//USER ENDPOINTS
+
+//CART ENDPOINTS
+
+app.get('/api/cart', cartCtrl.getCart)
+app.post('/api/addtocart', cartCtrl.addToCart)
+app.delete('/api/cart/:cart_item_id', cartCtrl.deleteFromCart)
+
+// app.post('/api/stripe')
+
+
+
 
 
 

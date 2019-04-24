@@ -30,7 +30,7 @@ class LoginRegister extends Component {
   async login () {
     const { email, password } = this.state
     const res = await axios.post('/auth/login', {email, password})
-    console.log('LOGIN/REGISTER RES', res)
+    // console.log('LOGIN/REGISTER RES', res)
     if (res.data.loggedIn) {
       this.props.toggleLogout()
       this.props.history.push('/')
@@ -48,6 +48,7 @@ class LoginRegister extends Component {
   
   
   render() {
+    // console.log(this.props)
     
     return (
       <div>
