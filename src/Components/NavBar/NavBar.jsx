@@ -4,6 +4,9 @@ import { getData } from '../../ducks/userReducer'
 import { connect } from 'react-redux'
 import './NavBar.css'
 import kixlogo from './kixlogo.png'
+import slc from './slc.png'
+import slc3 from './slc3.png'
+
 
 
 
@@ -28,7 +31,7 @@ class NavBar extends Component {
       <nav>
         <div className="navContainer">
           <div className='leftnavitems'>
-            <img src={kixlogo} alt=""/>
+            <img src={slc3} alt=""/>
             <input placeholder='Search for brand, model, etc.'/>
           </div>
           <div className='linksContainer'>

@@ -1,3 +1,5 @@
+
+
 *,
 :before,
 :after {
@@ -17,43 +19,122 @@
     /* border: solid grey 1px; */
     background-image: url(https://stockx-assets.imgix.net/headers/home_2.png?auto=compress%2Cformat);
     background-size: cover;
+    color: white
 
 }
 
 .rowContainer {
     width:100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding-top: 100px
+    padding-top: 100px;
+    padding-left: 19%;
+    padding-right: 19%
 }
 
 .row{
-    width:80%;
+    width:1000px;
     height: 350px;
     display: flex;
     flex-direction: row;
     justify-content: center
 }
 .jordanRow{
-    width:80%;
+    width:1010px;
     height: 350px;
     display: flex;
     flex-direction: row;
-    justify-content: center
+    justify-content: center;
+    padding-top: 15px;
+    border-top: solid 1px grey;
+    
+    
 }
 
 .nikeRow{
-    width:80%;
+    width:1010px;
     height: 350px;
     display: flex;
     flex-direction: row;
-    justify-content: center
+    justify-content: center;
+    padding-top: 15px;
+    border-top: solid 1px grey;
+    
 }
 
 .adidasRow{
-    width:80%;
+    width:1010px;
     height: 350px;
     display: flex;
     flex-direction: row;
-    justify-content: center
+    justify-content: center;
+    padding-top: 15px;
+    border-top: solid 1px grey;
 }
+
+.carouselPics{
+    height: 200px;
+    
+    background-color: grey
+}
+ 
+.carouselPics img{
+    height: 200px
+}
+
+.rowHeaderJ{
+    width: 1010px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rowHeaderJ img {
+    height: 50px;
+    width: 50px;
+    margin-bottom: 1rem;
+}
+
+.rowHeaderJ p{
+    
+}
+.rowHeaderN{
+    width: 1010px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rowHeaderN img {
+    height: 60px;
+    width: 60px;
+}
+
+.rowHeaderN p{
+    
+}
+
+.rowHeaderA{
+    width: 1010px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rowHeaderA img {
+    height: 45px;
+    width: 45px;
+    margin-bottom: 1rem
+}
+
+.rowHeaderA p{
+    
+}
+

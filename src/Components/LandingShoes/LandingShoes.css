@@ -7,12 +7,25 @@
 .shoeTile{
     display: flex;
     flex-direction: column;
-    height: 350px;
-    width: 350px;
-    margin:0;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 250px;
+    margin:0 30px;
+
 }
 
 .shoeTile img{
-    height: 214px;
-    width: 300px;
+    height: 142px;
+    width: 200px;
+}
+
+.shoepic{
+  height: 142px;
+  width: 200px;
+}
+
+.shoeTile Link{
+  height: 250px;
+  width: 250px;
 }

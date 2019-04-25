@@ -308,3 +308,14 @@ INSERT INTO shoes (
     1,
     'https://stockx.imgix.net/Adidas-Yeezy-500-Blush-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256'
 ),
+(
+    'Jordan',
+    '1 Retro High',
+    'ROTY',
+    9,
+    'GOLD HARVEST/BLACK-SAIL',
+    275,
+    '11/17/2018',
+    1,
+    'https://stockx.imgix.net/Air-Jordan-1-Retro-High-Rookie-Of-The-Year-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1540493582'
+),

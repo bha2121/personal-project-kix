@@ -39,7 +39,6 @@ module.exports = {
         await db.remove_from_cart({cart_item_id})
         const cartItems = await db.get_cart_items({id})
         res.send(cartItems)
-        
     }
 
 
