@@ -8,7 +8,9 @@ import { Carousel } from 'react-responsive-carousel';
 import jordanLogo2 from './jordanLogo2.png'
 import nikeLogo from './nikeLogo.png'
 import adidasLogo2 from './adidasLogo2.png'
-import yeezyBanner from './yeezyBanner.jpg'
+import jordanHeader from './jordanHeader.jpeg'
+import nike4 from './nike4.jpg'
+import nikesketch from './nikesketch.png'
 // import headerLogo from './jordanHeader.jpeg'
 
 class Landing extends Component {
@@ -57,18 +59,25 @@ class Landing extends Component {
   
     return (
       <div className="mainLanding">
-        <header className='landingHeader'> swag </header> 
+        <header className='landingHeader'>
+        <h4>
+          SLC KiX
+        </h4>
+        <h1>
+          BUY AUTHENTIC SNEAKERS
+        </h1>
+        </header> 
         <Carousel className='carouselPics' autoPlay showArrows={false} showStatus={false} 
                   showThumbs={false} infiniteLoop={true} axis={'vertical'} 
                   transitionTime={800} stopOnHover={false} showIndicators={false}>
                 <div>
-                    <img src="data:image/jpeg;base64,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"/>
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/3a295d56774853.5a8b168e38713.png"/>
                 </div>
                 <div>
-                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEhIVFRUVFRUVFRUVFxUVFRUVFRUXFxUVFRUYHSggGB0lHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDQ0NDg0NDisZFRkrKysrKys3KysrNys3KysrKysrKysrKysrKysrKys3KysrKysrKysrKysrKysrKysrK//AABEIAI0BZQMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAAAAQIGA//EABYQAQEBAAAAAAAAAAAAAAAAAAABEf/EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AOnCjDSiCgAAggCABUAFQQA0QFQQBUAAAE1UAAgAQBRCAoACiAAQAAAAFVFgKqLAaxBBGwEUgCiCgJUVAQoAggCpQBASgqAACAoIAAACAoaAKkUARQAAAAAAAUBUUFVAGgQG0UQAFBFARGsSwGcKpgMDWJQQFwGRqxkEFARGrEoIVQEBQQAAAAIoIphgIpigguJgAYACgAKAqNACoDYCABVAAEFSgiLUBBUBAAEq1KCKiggGAgqAAoCAAAAqKAAAAAAAAAAA1EUBYKCooDQKggqKAACLAGRamAiVpmgi6AIACAAYioCCoACghqoAAAoAAAKiggoCUVAFABYkWAqxFBQwBpQAAwBFsAQVAShQExK0yCEMAEVAEVAEVKAACKiggKCKAAGAAQBQAAAAAAAUICqLAAAeiKVBFBQRQEBQZRpARGksBkUBEsaSgzgoCI0gILYYDIoCCkgIoQExQAAAFSAKACKAigAoAqxI1ABQGxUsERYYQURQEFQBFARMWgIjSAiY0mAyNYmAiNYmCIjWArIoIyKCgLgIuACYKSCIoCgKCCgIAAKQFWIoNSBARsWRcBnEawkBBcARG7EwGcFwBkxTATEreJYDGFaMBgawwGBvEwGUbxLAZwUBEawBnCKuAyNYYCGKWAyuLhgILhgJgsAQaxLABcAIpiwAWQB//9k="/>
+                    <img src="http://lugvonsiga.com/wp-content/uploads/2018/09/free-shipping-banner.jpg"/>
                 </div>
                 <div>
-                    <img src={yeezyBanner}/>
+                    <img src={nikesketch}/>
                 </div>
         </Carousel>
 

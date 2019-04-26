@@ -4,6 +4,8 @@ import { setCart } from '../../ducks/cartReducer'
 import { connect } from 'react-redux'
 import './Cart.css'
 import axios from 'axios';
+import StripeCheckout from 'react-stripe-checkout';
+import slckix4 from './slckix4.png'
 
 
 class Cart extends Component {
@@ -23,6 +25,17 @@ class Cart extends Component {
     console.log(cartReponse)
   }
   
+  subTotal = () => {
+    const cart = this.props.cart
+    console.log(cart)
+    let total = 0
+    cart.forEach(item => {
+      console.log(item.sellingprice)
+      total += Number(item.sellingprice)
+  
+    })
+    return total
+  }
   
   
 
@@ -40,7 +53,7 @@ class Cart extends Component {
     )})
 
 
-    return (
+    return this.subTotal() >0 ?(
       <div>
         <header className="cartHeader"></header>
         <h1>
@@ -49,8 +62,33 @@ class Cart extends Component {
         <h2>
           {cartItems}
         </h2>
+        <div>
+        </div>
+        <h3>Subtotal: ${this.subTotal()}.00</h3>
+        {this.subTotal() !== 0 ? 
+            <StripeCheckout
+               name="SLC KiX"
+              //  description="Utah Toyota Off-Road"
+               image={slckix4}
+               email="contact@slckix.com"
+          
+               token= {this.onToken}
+               stripeKey={process.env.REACT_APP_STRIPE_KEY}
+               amount={(this.subTotal()*100)}
+              /> 
+              :
+            <h2>Cart is Empty! Go buy something!</h2>
+            }
+          </div>
+      
+    )
+    :(
+      <div>
+
+      <header className="cartHeader"></header>
+      <h2>Cart is Empty! Go buy something!</h2>
       </div>
-    );
+    )
   }
 }
 
