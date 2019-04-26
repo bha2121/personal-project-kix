@@ -84,7 +84,7 @@ module.exports = {
         
         const user = {id, firstname, lastname, email}
         db.edit_user(user).then((editUser) => {
-            console.log(editUser)
+            // console.log(editUser)
             req.session.user = { id: editUser[0].user_id, firstname: editUser[0].firstname, lastname: editUser[0].lastname, email: editUser[0].email, isadmin: editUser[0].isadmin }
             res.status(200).send(editUser)
         })

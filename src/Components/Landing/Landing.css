@@ -12,6 +12,10 @@
     flex-direction: column;
 }
 
+.headerContainer {
+    
+}
+
 
 
 .landingHeader{
@@ -82,7 +86,6 @@
 
 .carouselPics{
     height: 150px;
-    
     background-color: grey
 }
  

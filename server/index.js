@@ -37,6 +37,7 @@ app.put(`/api/auth/edituser`, authCtrl.editProfile)
 
 app.get('/api/getallshoes', shoeCtlr.getAllShoes)
 app.get('/api/sneaker/:shoe_id', shoeCtlr.getOneShoe)
+app.post('/api/shoesizes', shoeCtlr.getShoeSizes)
 
 
 

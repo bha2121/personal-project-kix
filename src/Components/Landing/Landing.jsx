@@ -8,9 +8,9 @@ import { Carousel } from 'react-responsive-carousel';
 import jordanLogo2 from './jordanLogo2.png'
 import nikeLogo from './nikeLogo.png'
 import adidasLogo2 from './adidasLogo2.png'
-import jordanHeader from './jordanHeader.jpeg'
-import nike4 from './nike4.jpg'
-import nikesketch from './nikesketch.png'
+import adcjordannike2 from './adcjordannike2.png'
+import shippingB from './shippingB.png'
+import supreme2 from './supreme2.png'
 // import headerLogo from './jordanHeader.jpeg'
 
 class Landing extends Component {
@@ -59,6 +59,7 @@ class Landing extends Component {
   
     return (
       <div className="mainLanding">
+      <div className="headerContainer">
         <header className='landingHeader'>
         <h4>
           SLC KiX
@@ -67,17 +68,18 @@ class Landing extends Component {
           BUY AUTHENTIC SNEAKERS
         </h1>
         </header> 
+      </div>
         <Carousel className='carouselPics' autoPlay showArrows={false} showStatus={false} 
                   showThumbs={false} infiniteLoop={true} axis={'vertical'} 
                   transitionTime={800} stopOnHover={false} showIndicators={false}>
                 <div>
-                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/3a295d56774853.5a8b168e38713.png"/>
+                    <img src={supreme2}/>
                 </div>
                 <div>
-                    <img src="http://lugvonsiga.com/wp-content/uploads/2018/09/free-shipping-banner.jpg"/>
+                    <img src={shippingB}/>
                 </div>
                 <div>
-                    <img src={nikesketch}/>
+                    <img src={adcjordannike2}/>
                 </div>
         </Carousel>
 

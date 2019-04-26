@@ -57,7 +57,7 @@ class Cart extends Component {
       <div>
         <header className="cartHeader"></header>
         <h1>
-          Cart
+          Cart items ({this.props.cart.length})
         </h1>
         <h2>
           {cartItems}
