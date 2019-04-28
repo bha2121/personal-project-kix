@@ -8,9 +8,9 @@ import { Carousel } from 'react-responsive-carousel';
 import jordanLogo2 from './jordanLogo2.png'
 import nikeLogo from './nikeLogo.png'
 import adidasLogo2 from './adidasLogo2.png'
-import adcjordannike2 from './adcjordannike2.png'
-import shippingB from './shippingB.png'
-import supreme2 from './supreme2.png'
+import adcjordannikeupdated from './adcjordannikeupdated.png'
+import shippingBupdated from './shippingBupdated.png'
+import supremeUpdated from './supremeUpdated.png'
 // import headerLogo from './jordanHeader.jpeg'
 
 class Landing extends Component {
@@ -37,10 +37,7 @@ class Landing extends Component {
 
   render() {
     // console.log(this.state.shoes.filter((item,i) => {
-    //   if (item.brand =='Jordan'){
-    //     return item
-    //   }}))
-
+    
     let jordanArr = this.state.shoes.filter((item,i) =>{
       if(item.brand === 'Jordan')
         return item
@@ -59,31 +56,31 @@ class Landing extends Component {
   
     return (
       <div className="mainLanding">
-      <div className="headerContainer">
-        <header className='landingHeader'>
-        <h4>
-          SLC KiX
-        </h4>
-        <h1>
-          BUY AUTHENTIC SNEAKERS
-        </h1>
-        </header> 
-      </div>
+        <div className="headerContainer">
+          <header className='landingHeader'>
+          <h4>
+            SLC KiX
+          </h4>
+          <h1>
+            BUY AUTHENTIC SNEAKERS
+          </h1>
+          </header> 
+        </div>
         <Carousel className='carouselPics' autoPlay showArrows={false} showStatus={false} 
                   showThumbs={false} infiniteLoop={true} axis={'vertical'} 
                   transitionTime={800} stopOnHover={false} showIndicators={false}>
                 <div>
-                    <img src={supreme2}/>
+                    <img src={supremeUpdated}/>
                 </div>
                 <div>
-                    <img src={shippingB}/>
+                    <img src={shippingBupdated}/>
                 </div>
                 <div>
-                    <img src={adcjordannike2}/>
+                    <img src={adcjordannikeupdated}/>
                 </div>
         </Carousel>
 
-        <div className="rowContainer">
+        <div className="landingRowContainer">
           <div className="rowHeaderJ">
             <img src={jordanLogo2} alt=""/>
             <p> SEE ALL </p>
@@ -117,6 +114,9 @@ class Landing extends Component {
             })}
           </div>
         </div>
+        <footer>
+          
+        </footer>
 
       </div>
     );

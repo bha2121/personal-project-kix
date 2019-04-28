@@ -74,11 +74,6 @@ class Sneaker extends Component {
     })
   }
 
-  
-
-  
-
-
 
 
   render() {

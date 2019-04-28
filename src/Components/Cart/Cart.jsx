@@ -10,14 +10,6 @@ import slckix4 from './slckix4.png'
 
 class Cart extends Component {
   
-  // componentDidMount(){
-  //   this.sup()
-  // }
-
-  // sup = () =>{
-  //   axios.get('/api/cart')
-  // }
-
   async removeItem(cart_item_id){
     console.log(cart_item_id)
     const cartReponse = await axios.delete(`/api/cart/${cart_item_id}`)

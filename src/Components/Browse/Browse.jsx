@@ -3,13 +3,18 @@ import axios from 'axios'
 import BrowseShoes from '../BrowseShoes/BrowseShoes'
 import BrowseSideBar from '../BrowseSideBar/BrowseSideBar'
 import './Browse.css'
+import { readdirSync } from 'fs';
 
 
 class Browse extends Component {
   constructor(){
       super()
       this.state = {
-        shoes: []
+        shoes: [],
+        shoesTotal: '',
+        jordanN: '',
+        nikeN: '',
+        adidasN: ''
       }
     }
 
@@ -19,8 +24,57 @@ class Browse extends Component {
     .then(res => {
       console.log('SHOE DATA', res.data)
       this.setState({
-          shoes: res.data
+          shoes: res.data,
+          shoesTotal: res.data.length
       })
+
+      let jordanSizes = res.data.map(item  => {
+        let size = 0
+        if (item.brand === 'Jordan'){
+          size = size +1
+          return size
+        } 
+        else {
+          size = 0
+          return size
+        }
+      }).reduce((total, num) => total + num)
+      this.setState({
+        jordanN: jordanSizes
+      })
+
+      let nikeSizes = res.data.map(item  => {
+        let size = 0
+        if (item.brand === 'Nike'){
+          size = size +1
+          return size
+        } 
+        else {
+          size = 0
+          return size
+        }
+      }).reduce((total, num) => total + num)
+      this.setState({
+        nikeN: nikeSizes
+      })
+
+      let adidasSizes = res.data.map(item  => {
+        let size = 0
+        if (item.brand === 'Adidas'){
+          size = size +1
+          return size
+        } 
+        else {
+          size = 0
+          return size
+        }
+      }).reduce((total, num) => total + num)
+      this.setState({
+        adidasN: adidasSizes
+      })
+
+
+
   }).catch(err => console.log('AXIOS GETALLSHOES ERR', err))
   }
 
@@ -28,7 +82,8 @@ class Browse extends Component {
     axios.get('/api/getallshoes')
     .then(res => {
       this.setState({
-          shoes: res.data
+          shoes: res.data,
+          shoesTotal: res.data.length
       })
     })
   }
@@ -38,7 +93,8 @@ class Browse extends Component {
     .then(res => {
       let jordanArr = res.data.filter((el)=> el.brand === 'Jordan')
       this.setState({
-        shoes: jordanArr
+        shoes: jordanArr,
+        shoesTotal: jordanArr.length
       })
     })
   }
@@ -46,9 +102,10 @@ class Browse extends Component {
   nikeFilter =(e)=>{
     axios.get('/api/getallshoes')
     .then(res => {      
-      let jordanArr = res.data.filter((el)=> el.brand === 'Nike')
+      let nikeArr = res.data.filter((el)=> el.brand === 'Nike')
       this.setState({
-        shoes: jordanArr
+        shoes: nikeArr,
+        shoesTotal: nikeArr.length
       })
     })
   }
@@ -56,13 +113,29 @@ class Browse extends Component {
   adidasFilter =(e)=>{
     axios.get('/api/getallshoes')
     .then(res => {      
-      let jordanArr = res.data.filter((el)=> el.brand === 'Adidas')
+      let adidasArr = res.data.filter((el)=> el.brand === 'Adidas')
       this.setState({
-        shoes: jordanArr
+        shoes: adidasArr,
+        shoesTotal: adidasArr.length
       })
     })
   }
 
+  
+  lowestPriceSortState =(e)=>{
+    let sort = this.state.shoes.sort((a,b)=> a.sellingprice - b.sellingprice)
+    this.setState({
+      shoes: sort
+    })
+  }
+  
+  highestPriceSortState =(e)=>{
+    let sort = this.state.shoes.sort((a,b)=> b.sellingprice - a.sellingprice)
+    this.setState({
+      shoes: sort
+    })
+  }
+  
   // lowestPriceState =(e)=>{
   //   axios.get('/api/getallshoes')
   //   .then(res => {
@@ -74,32 +147,34 @@ class Browse extends Component {
   //   })
   // }
 
-  lowestPriceSortState =(e)=>{
-    let sort = this.state.shoes.sort((a,b)=> a.sellingprice - b.sellingprice)
-    this.setState({
-      shoes: sort
-    })
-  }
-
-
   render() {
-  
+  console.log(this.state.jordanN)
     return (
+    <div>
       <div className="mainLanding">
         <header className='browseHeader'> </header> 
-        <div className="browseSort">
-        <span>Sort By:</span>
-        <button onClick={()=>this.lowestPriceSortState()}>Lowest Price</button>
-        </div>
         <main className='browseMainContainer'>
+
           <div className="browseSideBarContainer">
+            <div className="refineResults">
+              Refine Results
+            </div>
             <button onClick={()=>this.showAllProducts()}> All Products </button>
-            <button onClick={()=>this.jordanFilter()}> Jordan </button>
-            <button onClick={()=>this.nikeFilter()}> Nike </button>
-            <button onClick={()=>this.adidasFilter()}> Adidas </button>
+            <button onClick={()=>this.jordanFilter()}> Jordan ({this.state.jordanN}) </button>
+            <button onClick={()=>this.nikeFilter()}> Nike ({this.state.nikeN}) </button>
+            <button onClick={()=>this.adidasFilter()}> Adidas ({this.state.adidasN}) </button>
           </div>
+
           <div className="browseProductsContainerRight">
-            <div className="rowContainer">
+            <div className="browseSort">
+              <div>
+                Sneakers: ({this.state.shoesTotal})
+              </div>
+              <span>Sort By:</span>
+              <button onClick={()=>this.lowestPriceSortState()}>Lowest Price</button>
+              <button onClick={()=>this.highestPriceSortState()}>Highest Price</button>
+            </div>
+            <div className="browseRowContainer">
               <div className="row">
                 {this.state.shoes.map((item,i) => {
                   return <BrowseShoes key={i} 
@@ -111,6 +186,10 @@ class Browse extends Component {
           </div>
         </main>
       </div>
+        <footer>
+
+        </footer>
+    </div>
     );
   }
 }

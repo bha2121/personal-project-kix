@@ -18,28 +18,6 @@ class NavBar extends Component {
   }
 
 
-  withScroll = e => {
-    // console.log(e.target.scrollTop, e.target)
-    let navbar = document.getElementById("navContainer")
-    // let anchorContainer = document.querySelector(".anchorContainer")
-    if (e.target.scrollTop || e.target.scrollTop === 0) {
-      if (e.target.scrollTop <= 75) {
-        navbar.className = ""
-      } else {
-        navbar.className = "scroll"
-      }
-    } else {
-      if (e.target.scrollingElement.scrollTop <= 100) {
-        navbar.className = ""
-      } else {
-        navbar.className = "scroll"
-      }
-    }
-    // console.log(anchorContainer.className)
-  }
-
-
-
 
   render() {
     // const {toggleLogout} = this.props.user

@@ -21,13 +21,9 @@ class MyAccount extends Component {
     await this.props.getData()
     // console.log(this.props)
     this.setState({
-      // firstname: this.props.user.user.firstname,
       firstname: this.props.user.firstname,
-      // lastname: this.props.user.user.lastname,
-      lastname: this.props.user.lastname,
-      // email: this.props.user.user.email,
-      email: this.props.user.email,
-      // isadmin: this.props.user.user.isadmin,
+      lastname: this.props.user.lastname,      
+      email: this.props.user.email,      
       isadmin: this.props.user.isadmin,
     })
     }
@@ -54,9 +50,6 @@ class MyAccount extends Component {
       axios.put(`/api/auth/edituser`, userBody).then(res => {
         // console.log('edit response', res)
         this.setState({
-          // firstname: this.props.user.firstname,
-          // lastname: this.props.user.lastname,
-          // email: this.props.user.email,
           firstname: res.data[0].firstname,
           lastname: res.data[0].lastname,
           email: res.data[0].email
