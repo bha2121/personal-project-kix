@@ -3,7 +3,9 @@ import axios from 'axios'
 import BrowseShoes from '../BrowseShoes/BrowseShoes'
 import BrowseSideBar from '../BrowseSideBar/BrowseSideBar'
 import './Browse.css'
-import { readdirSync } from 'fs';
+import adcGrey2 from './logos/adcGrey2.png'
+import nikeGrey2 from './logos/nikeGrey2.png'
+import jordGrey2 from './logos/jordGrey2.png'
 
 
 class Browse extends Component {
@@ -14,7 +16,9 @@ class Browse extends Component {
         shoesTotal: '',
         jordanN: '',
         nikeN: '',
-        adidasN: ''
+        adidasN: '',
+        brandToggle: false,
+        sizeToggle: false,
       }
     }
 
@@ -121,7 +125,30 @@ class Browse extends Component {
     })
   }
 
-  
+
+  // sizeFilter = (e) =>{
+  //   const {value} = e.target
+  //   axios.get('/api/getallshoes')
+  //   .then(res => {      
+  //     let sizeArr = res.data.filter((el)=> el.size === value)
+  //     this.setState({
+  //       shoes: sizeArr,
+  //       shoesTotal: sizeArr.length
+  //     })
+  //   })
+  // }
+
+
+
+
+  sizeFilterState = (shoeSize) => {
+    let size = this.state.shoes.filter((el)=> el.size === shoeSize)
+    this.setState({
+      shoes: size,
+      shoesTotal: size.length,
+    })
+  }
+
   lowestPriceSortState =(e)=>{
     let sort = this.state.shoes.sort((a,b)=> a.sellingprice - b.sellingprice)
     this.setState({
@@ -135,6 +162,31 @@ class Browse extends Component {
       shoes: sort
     })
   }
+
+  brandToggleOn = () => {
+    this.setState({
+      brandToggle: true
+    })
+  }
+
+  brandToggleOff = () => {
+    this.setState({
+      brandToggle: false
+    })
+  }
+
+  sizeToggleOn = () => {
+    this.setState({
+      sizeToggle: true
+    })
+  }
+
+  sizeToggleOff = () => {
+    this.setState({
+      sizeToggle: false
+    })
+  }
+
   
   // lowestPriceState =(e)=>{
   //   axios.get('/api/getallshoes')
@@ -149,6 +201,7 @@ class Browse extends Component {
 
   render() {
   console.log(this.state.jordanN)
+  const {brandToggle, sizeToggle} = this.state
     return (
     <div>
       <div className="mainLanding">
@@ -157,19 +210,49 @@ class Browse extends Component {
 
           <div className="browseSideBarContainer">
             <div className="refineResults">
-              Refine Results
+              Filtered Results: ({this.state.shoesTotal})
             </div>
-            <button onClick={()=>this.showAllProducts()}> All Products </button>
-            <button onClick={()=>this.jordanFilter()}> Jordan ({this.state.jordanN}) </button>
-            <button onClick={()=>this.nikeFilter()}> Nike ({this.state.nikeN}) </button>
-            <button onClick={()=>this.adidasFilter()}> Adidas ({this.state.adidasN}) </button>
+            <button onClick={()=>this.showAllProducts()}> ALL PRODUCTS </button>
+            {
+              !brandToggle ? (
+              <button className="categoryButton" onClick={() => this.brandToggleOn()}><span style={{fontSize:13, fontWeight:600}} > BRAND </span><span style={{fontSize:20, fontWeight:600}}> + </span></button>
+              ) : (
+              <div className="toggleBrandContainer">
+                <button className="categoryButton" onClick={()=> this.brandToggleOff() }> <span style={{fontSize:13, fontWeight:600}} > BRAND </span> <span style={{fontSize:20, fontWeight:600}}> - </span></button>
+                <div className="toggledBrands">
+                  <button onClick={()=>this.jordanFilter()}> <img src={jordGrey2} alt=""/> </button>
+                  <button onClick={()=>this.nikeFilter()}> <img src={nikeGrey2} alt=""/> </button>
+                  <button onClick={()=>this.adidasFilter()}> <img src={adcGrey2} alt=""/> </button>
+                  </div>
+              </div>
+              )
+            }
+            {
+              !sizeToggle ? (
+              <button className="categoryButton" onClick={() => this.sizeToggleOn()}><span style={{fontSize:13, fontWeight:600}} > SIZE </span><span style={{fontSize:20, fontWeight:600}}> + </span></button>
+              ) : (
+              <div className="toggleBrandContainer">
+                <button className="categoryButton" onClick={()=> this.sizeToggleOff() }> <span style={{fontSize:13, fontWeight:600}} > SIZE </span> <span style={{fontSize:20, fontWeight:600}}> - </span></button>
+                <div className="toggledBrands">
+                  <button value="4.5" onClick={(e)=>this.sizeFilterState(e.target.value)}> 4.5 </button>
+                  <button value="5" onClick={(e)=>this.sizeFilterState(e.target.value)}> 5 </button>
+                  <button value="5.5" onClick={(e)=>this.sizeFilterState(e.target.value)}> 5.5 </button>
+                  <button value="6" onClick={(e)=>this.sizeFilterState(e.target.value)}> 6 </button>
+                  <button value="7" onClick={(e)=>this.sizeFilterState(e.target.value)}> 7 </button>
+                  <button value="8" onClick={(e)=>this.sizeFilterState(e.target.value)}> 8 </button>
+                  <button value="8.5" onClick={(e)=>this.sizeFilterState(e.target.value)}> 8.5 </button>
+                  <button value="9" onClick={(e)=>this.sizeFilterState(e.target.value)}> 9 </button>
+                  <button value="9.5" onClick={(e)=>this.sizeFilterState(e.target.value)}> 9.5 </button>
+                  <button value="10" onClick={(e)=>this.sizeFilterState(e.target.value)}> 10 </button>
+                  <button value="11" onClick={(e)=>this.sizeFilterState(e.target.value)}> 11 </button>
+                  </div>
+              </div>
+              )
+            }
           </div>
 
           <div className="browseProductsContainerRight">
             <div className="browseSort">
-              <div>
-                Sneakers: ({this.state.shoesTotal})
-              </div>
               <span>Sort By:</span>
               <button onClick={()=>this.lowestPriceSortState()}>Lowest Price</button>
               <button onClick={()=>this.highestPriceSortState()}>Highest Price</button>

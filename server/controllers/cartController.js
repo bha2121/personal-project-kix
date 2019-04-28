@@ -23,7 +23,7 @@ module.exports = {
         const { shoe_id } = req.body
         const db = req.app.get('db')
         const carts = await db.get_cart({id})
-        // console.log(carts, id)
+        console.log(carts)
         const cart = carts.length > 0 ? carts[0] : (await db.create_cart({id}))[0]
         // console.log(cart)
         await db.add_to_cart({cart_id : cart.cart_id, shoe_id})

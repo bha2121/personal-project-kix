@@ -22,17 +22,27 @@ class Cart extends Component {
     console.log(cart)
     let total = 0
     cart.forEach(item => {
-      console.log(item.sellingprice)
+      // console.log(item.sellingprice)
       total += Number(item.sellingprice)
   
     })
     return total
   }
+
+  onToken = (token) => {
+    token.card = void 0
+    axios.post('/api/stripe', {token, amount:(this.subTotal()*100)}).then(res => {
+      console.log('checkout response', res)
+      window.location.reload()
+    })
+}
+
   
   
 
   render() {
     console.log(this.props)
+  
     
     let cartItems = this.props.cart.map(item=>{
       return(
@@ -60,16 +70,15 @@ class Cart extends Component {
         {this.subTotal() !== 0 ? 
             <StripeCheckout
                name="SLC KiX"
-              //  description="Utah Toyota Off-Road"
                image={slckix4}
                email="contact@slckix.com"
-          
+        
                token= {this.onToken}
                stripeKey={process.env.REACT_APP_STRIPE_KEY}
                amount={(this.subTotal()*100)}
               /> 
               :
-            <h2>Cart is Empty! Go buy something!</h2>
+            <h2>Cart is Empty!</h2>
             }
           </div>
       
@@ -78,7 +87,7 @@ class Cart extends Component {
       <div>
 
       <header className="cartHeader"></header>
-      <h2>Cart is Empty! Go buy something!</h2>
+      <h2>Cart is Empty!</h2>
       </div>
     )
   }

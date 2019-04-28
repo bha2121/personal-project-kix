@@ -5,6 +5,7 @@ const massive = require('massive')
 const shoeCtlr = require('./controllers/shoeContoller')
 const authCtrl =require('./controllers/authController')
 const cartCtrl = require('./controllers/cartController')
+const stripeCtrl = require('./controllers/stripeController')
 
 const session = require('express-session')
 const app = express()
@@ -47,7 +48,7 @@ app.get('/api/cart', cartCtrl.getCart)
 app.post('/api/addtocart', cartCtrl.addToCart)
 app.delete('/api/cart/:cart_item_id', cartCtrl.deleteFromCart)
 
-// app.post('/api/stripe')
+app.post('/api/stripe', stripeCtrl.handlePayment)
 
 
 

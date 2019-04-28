@@ -40,8 +40,21 @@
     font-weight: 900;
     font-size: 20px;
     letter-spacing: 1px;
-    color: white
+    color: white;
+    animation: .55s nameZoom;
 }
+
+  @keyframes nameZoom {
+    0% {
+        transform: scale(0);
+    } 
+    /* 50%{
+        transform: scale(.5)
+    } */
+    100% {
+        transform: none;
+    }
+  }
 
 .myAccountSidebarLinks{
     display: flex;

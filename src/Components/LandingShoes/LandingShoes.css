@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.shoeTile{
+.landingShoeTile{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,7 +15,7 @@
     text-align: center
 }
 
-.shoeTile img{
+.landingShoeTile img{
     height: 142px;
     width: 200px;
 }
@@ -25,16 +25,16 @@
   width: 200px;
 }
 
-.shoeTile Link{
+.landingShoeTile Link{
   height: 250px;
   width: 250px;
 }
 
-.shoeTile a {
+.landingShoeTile a {
   text-decoration: none;
 }
 
-.shoeTile :nth-child(2) {
+.landingShoeTile :nth-child(2) {
   color: black;
   height: 36px;
   width:200px;
@@ -42,7 +42,7 @@
   font-weight: 900
 }
 
-.shoeTile :nth-child(3){
+.landingShoeTile :nth-child(3){
   font-family: 'Roboto', sans-serif;
 
   color: black;

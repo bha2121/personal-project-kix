@@ -5,7 +5,7 @@ import './BrowseShoes.css'
 
 function BrowseShoes(props){
     return (
-    <div className="shoeTile">
+    <div className="browseShoeTile">
         <Link to={`/sneaker/${props.shoe.shoe_id}`}>
             <div className="shoepic">
                 <img src={props.shoe.img} alt="house"/>
