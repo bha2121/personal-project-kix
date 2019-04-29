@@ -92,7 +92,7 @@ class LoginRegister extends Component {
               ):(
             <div className="signupContainer">
               <div className="signupInputs">
-                <input name='firstname' placeholder="First Name" onChange={this.handleOnChange} autoComplete="off" />
+                <input name='firstname' placeholder="First Name" onChange={this.handleOnChange} type="text" autoComplete="off" />
                 <input name='lastname' placeholder="Last Name" onChange={this.handleOnChange} autoComplete="off" />
                 <input name='email' placeholder="Email" onChange={this.handleOnChange} autoComplete="off" />
                 <input name='password' placeholder="Password" type='password' onChange={this.handleOnChange} autoComplete="off" />

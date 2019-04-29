@@ -83,30 +83,43 @@ class Sneaker extends Component {
   console.log(this.state.selected)  
     
     return (
-      <div>
+      <div className="sneakerPage">
         <header className="sneakerHeader"></header>
-        <div className="sneakerPageContainer">
-          <h1>
-            {this.state.brand} {this.state.model} {this.state.colorway}
-          </h1>
-          <p>Condition: New in Box | 100% Authentic</p>
-          <img src={this.state.img} alt=""/>
-          <button onClick={()=> {this.handleAddToCart(shoe_id)}}> Add to cart</button>
-          <div>
-            ${this.state.sellingprice}
+        <main className="sneakerPageContainer">
+          <div className="sneakerleftMainContainer">
+            <img src={this.state.img} alt=""/>
           </div>
-          <div>
-            <p>SIZE: {this.state.size}</p>
-            <p>COLOR: {this.state.colorscheme}</p>
-            <p>RELEASE DATE: {this.state.releasedate}</p>
+          <div className="sneakerRightMainContainer">
+            <div className="sneakerTitle">
+              <p>{this.state.brand} {this.state.model}</p>
+              <p>{this.state.colorway}</p>
+              <p>${this.state.sellingprice}</p>
+            </div>
+            <div className="sneakerSizeContainer">
+              <p>Select Size (US):</p>
+              <div className="sneakerSizeTileContainer">
+                {sizeArr.map((item, i) => {
+                  return <SneakerSizes key={item.shoe_id} shoeS={item} 
+                  id={item.shoe_id} handleSelected={this.handleSelected} selected={this.state.selected} />
+                }).sort((a,b)=> a.size*1 - b.size*1)}
+              </div>
+              <div className="addToCartButton">
+                <button onClick={()=> {this.handleAddToCart(shoe_id)}}> Add to cart</button>
+              </div>
+            </div>
+            <div className="sneakerDescriptionContainer">
+              <p>Details:</p>
+              <p>CONDITION: NEW IN BOX | <span style={{color: 'green', textDecoration: 'none', fontSize:16}}>100%</span> AUTHENTIC</p>
+              <p>COLOR: {this.state.colorscheme}</p>
+              <p>RELEASE DATE: {this.state.releasedate}</p>
+              <p style={{color: "white"}}>.</p>
+              {/* <p>SIZE: {this.state.size}</p> */}
+            </div>
           </div>
-          <div className="sizesContainer">
-            {sizeArr.map((item, i) => {
-              return <SneakerSizes key={item.shoe_id} shoeS={item} 
-              id={item.shoe_id} handleSelected={this.handleSelected} selected={this.state.selected} />
-            })}
-          </div>
-        </div>
+        </main>
+        <footer className="sneakerFoot">
+
+        </footer>
       </div>
     )
   }

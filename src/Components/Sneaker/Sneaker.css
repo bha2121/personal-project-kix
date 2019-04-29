@@ -4,3 +4,234 @@
     background-color: black;
 }
 
+.sneakerPage {
+    
+    
+}
+
+.sneakerPageContainer {
+    height:100%;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    padding-right: 50px;
+}
+
+.sneakerleftMainContainer {
+     width: 60%;
+     display: flex;
+     justify-content: center;
+     padding-top: 100px;
+     /* align-items: center; */
+}
+
+.sneakerleftMainContainer img {
+    height: 428.5px;
+    width: 600px;
+    
+}
+
+.sneakerRightMainContainer {
+    
+    width: 50%;
+    padding-top: 50px;
+}
+
+.sneakerTitle {
+    padding-top: 25px;
+    border-top: solid black 3px;
+    border-left: solid black 1px;
+    border-right: solid black 1px;
+    font-size: 30px;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid black 4px
+    
+}
+
+.sneakerTitle :nth-child(1) {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif
+}
+
+.sneakerTitle :nth-child(2) {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sneakerTitle :nth-child(3) {
+    
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.sneakerSizeContainer {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: black solid 1px;
+    border-right: black solid 1px;
+}
+
+.sneakerSizeTileContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 230%;
+
+}
+
+.sneakerSizeTileContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%
+}
+
+
+.sneakerSizeTileContainer button {
+    height: 50px;
+    width: 50px;
+    background: white;
+    /* color: #666; */
+    color: black;
+    border-color: #f1e8e8;
+    margin: 12px 4.4px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: inherit;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    /* animation: .45s brand-Zoom; */
+}
+
+.sizeTile  a{
+    text-decoration: none;
+}
+
+.sizeTile button:focus {
+    background: rgba(165, 162, 162, 0.87)
+}
+
+
+/* .sneakerSizeTileContainer button img {
+    height: 25px;
+    width: 25px
+}
+.sneakerSizeTileContainer button:focus img{
+    height: 34px;
+    width: 34px;
+} */
+
+
+/* .sneakerSizeTileContainer button:hover {
+    background: rgb(230, 228, 228)
+} */
+
+
+
+.sneakerSizeTileContainer button:focus {
+    color: white;
+    background: rgba(165, 162, 162, 0.87);
+    outline: none;
+    font-size: 17px;
+    font-weight: 900;
+    animation: .6s sizeZoom;
+}
+
+  @keyframes sizeZoom {
+    0% {
+        transform: scale(.5);
+    } 
+    /* 50%{
+        transform: scale(.5)
+    } */
+    100% {
+        transform: none;
+    }
+  }
+
+  .addToCartButton button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 20px;
+    /* border: 1px solid #FF4B2B; */
+    border: 1px solid rgba(165, 162, 162, 0.87);
+    /* background-color: #FF4B2B; */
+    background-color: rgba(165, 162, 162, 0.87);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    /* padding: 12px 45px; */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	margin-top: 20px;
+    cursor: pointer;
+    width: 130px;
+    padding: 12px 15px;
+    
+}
+
+.addToCartButton button:active {
+	transform: scale(0.90);
+}
+
+.addToCartButton button:focus {
+	outline: none;
+}
+
+.sneakerDescriptionContainer {
+    width: 100%;
+    padding-top: 30px;
+    border-left: solid black 1px;
+    border-right: solid black 1px;
+    border-bottom: solid black 3px;
+    margin-bottom: 80px;
+    
+}
+
+.sneakerDescriptionContainer :nth-child(1) {
+    margin-bottom: 30px;
+    align-content: center;
+    justify-content: center;
+    text-decoration: underline;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-family: 900;
+    
+}
+
+.sneakerDescriptionContainer :nth-child(2) {
+    padding-left: 170px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+.sneakerDescriptionContainer :nth-child(3) {
+    padding-left: 170px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+.sneakerDescriptionContainer :nth-child(4) {
+    padding-left: 170px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+
+
+
+

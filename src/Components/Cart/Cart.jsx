@@ -36,7 +36,6 @@ class Cart extends Component {
 
 
   onToken = (token, addresses) => {
-    // token.card = void 0
     axios.post('/api/stripe', {token, amount:(this.subTotal()*100)})
     .then(res => {
       console.log('checkout response', res)

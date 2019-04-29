@@ -5,7 +5,7 @@ class SneakerSizes extends Component{
     constructor(){
         super()
         this.state = {
-            bgcolor: 'grey'
+            bgcolor: 'rgba(165, 162, 162, 0.87)'
         }
     }
 
@@ -25,7 +25,7 @@ class SneakerSizes extends Component{
         <div className="sizeTile">
             <Link to={`/sneaker/${this.props.shoeS.shoe_id}`}>
                 <button onClick={(e)=> this.props.handleSelected(this.props.id)} 
-          style={idmatch ? {backgroundColor:"grey"} : {backgroundColor:"white"}}> {this.props.shoeS.size} </button>
+          style={idmatch ? {backgroundColor:"rgba(165, 162, 162, 0.87)"} : {backgroundColor:"white"}}> {this.props.shoeS.size} </button>
             </Link>
         </div>
     )}
