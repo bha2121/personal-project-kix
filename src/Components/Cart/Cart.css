@@ -3,3 +3,183 @@
     width: 100%;
     background-color: black;
 }
+
+
+
+.cartPage h1 {
+    font-size: 20px;
+    padding-left: 100px;
+    padding-top: 30px;
+    margin-bottom: 30px
+}
+
+.cartPage {
+    
+}
+
+.cartMain {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.cartItemsHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border-bottom: solid 1px grey;
+    padding-right: 20px;
+
+}
+
+.cartRight { 
+    width: 40%
+}
+
+.cartLeft {
+    width: 60%;
+    padding-left: 100px;
+}
+
+.cartLeft img {
+    /* height: 142px; */
+    /* width: 200px; */
+    height: 106.5px;
+    width: 150px;
+}
+
+.single-cart-product {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: solid 1px lightgrey;
+    padding-right: 20px;
+}
+
+.cart-product {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+
+}
+
+.cart-product p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.cart-shoe-price {
+    width: 80px;
+}
+
+
+
+.cartRight {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+
+}
+
+
+.cartRightBox {
+    width: 376px;
+    height: 347px;
+    /* background: rgb(184, 182, 182); */
+    background: white;
+    color: black;
+    /* border-radius: 5px; */
+    border: solid 1px lightgray;
+    
+}
+
+.orderSum {
+    height: 55px;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    background: rgb(245, 243, 243);
+    padding-left: 16px;
+    border-bottom: solid 1px lightgrey;
+}
+
+.subCon {
+    height: 75px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
+    /* padding-top: 16px; */
+    padding-top: 22px;
+    border-bottom: solid 1px lightgrey;
+}
+
+.subCon p { 
+    margin: 0;
+}
+
+
+.shipCon {
+    height: 75px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+    border-bottom: solid 1px lightgrey;
+}
+
+.totalCon {
+    height: 75px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+    border-bottom: solid 1px lightgrey;
+}
+
+
+
+
+
+.single-cart-product button {
+    background:  white;
+    height: 30px;
+    width: 60px;
+    border: none;
+    border-color: none;
+    padding: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.fa-trash-alt{
+    color: #FA9292;
+    font-size: 20px
+  }
+
+.single-cart-product i:hover{
+    color: rgb(248, 110, 110);
+    font-size: 25px
+  }
+
+  .strCheck {
+    width: 374px;
+    display: flex;
+    justify-content: center;
+    padding-top: 16px;
+  }
+
+

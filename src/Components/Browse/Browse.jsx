@@ -17,8 +17,8 @@ class Browse extends Component {
         jordanN: '',
         nikeN: '',
         adidasN: '',
-        brandToggle: false,
-        sizeToggle: false,
+        brandToggle: true,
+        sizeToggle: true,
       }
     }
 
@@ -77,10 +77,10 @@ class Browse extends Component {
         adidasN: adidasSizes
       })
 
-
-
   }).catch(err => console.log('AXIOS GETALLSHOES ERR', err))
   }
+
+  
 
   showAllProducts(){
     axios.get('/api/getallshoes')
@@ -89,7 +89,7 @@ class Browse extends Component {
           shoes: res.data,
           shoesTotal: res.data.length
       })
-    })
+    }).catch(err => console.log('AXIOS GETALLSHOES ERR', err))
   }
 
   jordanFilter =(e)=>{
@@ -100,7 +100,7 @@ class Browse extends Component {
         shoes: jordanArr,
         shoesTotal: jordanArr.length
       })
-    })
+    }).catch(err => console.log('JORDAN ERR', err))
   }
 
   nikeFilter =(e)=>{
@@ -111,7 +111,7 @@ class Browse extends Component {
         shoes: nikeArr,
         shoesTotal: nikeArr.length
       })
-    })
+    }).catch(err => console.log('NIKE FILTER ERR', err))
   }
   
   adidasFilter =(e)=>{
@@ -122,7 +122,7 @@ class Browse extends Component {
         shoes: adidasArr,
         shoesTotal: adidasArr.length
       })
-    })
+    }).catch(err => console.log('ADIDAS ERR', err))
   }
 
 

@@ -47,40 +47,78 @@ class Cart extends Component {
     let cartItems = this.props.cart.map(item=>{
       return(
       <div className='single-cart-product' key={item.cart_item_id}>
-      <img src={item.img} alt=""/>
-      <div className='cart-product'>{item.brand} {item.model} {item.colorway}</div>
-      <div className='cart-shoe-price'> ${item.sellingprice}.00 </div>
-      <button onClick={() => this.removeItem(item.cart_item_id)}>REMOVE</button>
+        <img src={item.img} alt=""/>
+        <div className='cart-product'>
+          <p> {item.brand} {item.model} </p>
+          <p> {item.colorway} </p>
+          <p> Size: {item.size} </p>
+        </div>
+        <div className='cart-shoe-price'> ${item.sellingprice}.00 </div>
+        <button onClick={() => this.removeItem(item.cart_item_id)}><i className="far fa-trash-alt"></i></button>
       </div>
     )})
 
 
     return this.subTotal() >0 ?(
-      <div>
+      <div className="cartPage">
         <header className="cartHeader"></header>
         <h1>
           Cart items ({this.props.cart.length})
         </h1>
-        <h2>
-          {cartItems}
-        </h2>
-        <div>
-        </div>
-        <h3>Subtotal: ${this.subTotal()}.00</h3>
-        {this.subTotal() !== 0 ? 
-            <StripeCheckout
-               name="SLC KiX"
-               image={slckix4}
-               email="contact@slckix.com"
-        
-               token= {this.onToken}
-               stripeKey={process.env.REACT_APP_STRIPE_KEY}
-               amount={(this.subTotal()*100)}
-              /> 
-              :
-            <h2>Cart is Empty!</h2>
-            }
+        <main className="cartMain"> 
+          <div className="cartLeft">
+            <div className="cartItemsHeader">
+              <p>Product</p>
+              <p>Size</p>
+              <p>Price</p>
+              <p>Remove</p>
+            </div>
+            <div>
+                {cartItems}
+            </div>
           </div>
+
+          <div className="cartRight">
+            <div className="cartRightBox">
+              <div className="orderSum"> Order Summary </div>
+                <div className='subCon'>
+                  <div className="subConLeft">
+                    <p style={{fontWeight:600}}>SUBTOTAL:</p>
+                    <p style={{fontSize:12}}>({this.props.cart.length} Items)</p>
+                  </div>
+                  <p>${this.subTotal()}.00</p>
+                </div>
+                <div className="shipCon">
+                  <p style={{fontWeight:600}}> SHIPPING:</p>
+                  <p> FREE </p>
+                </div>
+                <div className="totalCon">
+                  <p style={{fontWeight:600}}> TOTAL:</p>
+                  <p>${this.subTotal()}.00</p>
+                </div>
+
+              {this.subTotal() !== 0 ? 
+                <div className="strCheck">
+                  <StripeCheckout
+                  name="SLC KiX"
+                  image={slckix4}
+                  email="contact@slckix.com"
+                  
+                  token= {this.onToken}
+                  stripeKey={process.env.REACT_APP_STRIPE_KEY}
+                  amount={(this.subTotal()*100)}
+                  /> 
+                </div>
+                  :
+                  <h2>Cart is Empty!</h2>
+                }
+            </div>
+          </div>
+        </main>
+        <footer>
+
+        </footer>
+      </div>
       
     )
     :(
