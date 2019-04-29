@@ -260,7 +260,7 @@
 .userInfoInput{
     margin-right: 30px;
     margin-top: 70px;
-    color: grey;
+    color: black;
 }
 
 .firstNameInputBox input::placeholder{
@@ -283,7 +283,7 @@
 .firstNameInputBox {
     height: 50px;
     width: 475px;
-    border: 1px solid #FA9292;
+    border: 1px dashed black;
     margin-top: 1rem;
     padding-left: 8px;
     position: relative
@@ -325,7 +325,7 @@
 .lastNameInputBox {
     height: 50px;
     width: 475px;
-    border: 1px solid black;
+    border: 1px dashed black;
     margin-top: 1rem;
     padding-left: 8px;
     position: relative
@@ -377,7 +377,8 @@
     border: 1px dashed black;
     margin-top: 1rem;
     padding-left: 8px;
-    position: relative
+    position: relative;
+    
 }
 
 

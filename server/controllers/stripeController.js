@@ -4,13 +4,16 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 module.exports = {
     handlePayment: async (req, res) => {
         const {id} = req.session.user;
-        const { amount, token:{token_id} } = req.body;
+        const { amount } = req.body;
+        const { id: token_id } = req.body.token
         const db = req.app.get('db');
 
         const carts = await db.get_cart({id})
         const cartId = carts[0].cart_id
         console.log(carts, id)
         db.cart_purchase({id, cartId})
+
+        
 
         stripe.charges.create(
             {

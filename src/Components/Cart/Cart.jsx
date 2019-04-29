@@ -29,19 +29,35 @@ class Cart extends Component {
     return total
   }
 
-  onToken = (token) => {
-    token.card = void 0
-    axios.post('/api/stripe', {token, amount:(this.subTotal()*100)}).then(res => {
+  
+  
+
+
+
+
+  onToken = (token, addresses) => {
+    // token.card = void 0
+    axios.post('/api/stripe', {token, amount:(this.subTotal()*100)})
+    .then(res => {
       console.log('checkout response', res)
       window.location.reload()
     })
+    .catch(error => {
+      console.log("Payment Error: ", error);
+      alert("Payment Error");
+    });
 }
+
+
+
+
 
   
   
 
   render() {
     console.log(this.props)
+    const publishableKey = "pk_test_Ph4ydsNgshUChfwlkP1cgDZP00iPEFbvNC";
   
     
     let cartItems = this.props.cart.map(item=>{
@@ -102,10 +118,10 @@ class Cart extends Component {
                   <StripeCheckout
                   name="SLC KiX"
                   image={slckix4}
-                  email="contact@slckix.com"
+                  email="contactus@slckix.com"
                   
                   token= {this.onToken}
-                  stripeKey={process.env.REACT_APP_STRIPE_KEY}
+                  stripeKey={publishableKey}
                   amount={(this.subTotal()*100)}
                   /> 
                 </div>

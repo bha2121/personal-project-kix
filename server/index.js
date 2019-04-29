@@ -16,6 +16,7 @@ massive(CONNECTION_STRING).then(db => {
     app.set('db', db)
     // console.log('db is connected')
     console.log(db.listTables())
+    app.listen(SERVER_PORT, () => console.log('listening on port', SERVER_PORT))
 })
 
 app.use(express.json())
@@ -64,4 +65,4 @@ app.post('/api/stripe', stripeCtrl.handlePayment)
 
 
 
-app.listen(SERVER_PORT, () => console.log('listening on port', SERVER_PORT))
+// app.listen(SERVER_PORT, () => console.log('listening on port', SERVER_PORT))
