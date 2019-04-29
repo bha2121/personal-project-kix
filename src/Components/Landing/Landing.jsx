@@ -5,12 +5,12 @@ import './Landing.css'
 import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import jordanLogo2 from './jordanLogo2.png'
-import nikeLogo from './nikeLogo.png'
-import adidasLogo2 from './adidasLogo2.png'
-import adcjordannikeupdated from './adcjordannikeupdated.png'
-import shippingBupdated from './shippingBupdated.png'
-import supremeUpdated from './supremeUpdated.png'
+import jordanLogo2 from './logos/jordanLogo2.png'
+import nikeLogo from './logos/nikeLogo.png'
+import adidasLogo2 from './logos/adidasLogo2.png'
+import adcjordannikeupdated from './logos/adcjordannikeupdated.png'
+import shippingBupdated from './logos/shippingBupdated.png'
+import supremeUpdated from './logos/supremeUpdated.png'
 // import headerLogo from './jordanHeader.jpeg'
 
 class Landing extends Component {
@@ -115,7 +115,7 @@ class Landing extends Component {
           </div>
         </div>
         <footer>
-          
+
         </footer>
 
       </div>

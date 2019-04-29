@@ -69,7 +69,7 @@ class Cart extends Component {
           <div className="cartLeft">
             <div className="cartItemsHeader">
               <p>Product</p>
-              <p>Size</p>
+              <p>Details</p>
               <p>Price</p>
               <p>Remove</p>
             </div>

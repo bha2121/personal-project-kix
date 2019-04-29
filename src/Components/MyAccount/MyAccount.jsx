@@ -37,7 +37,11 @@ class MyAccount extends Component {
 
     handleCancelEdit=()=>{
       this.setState({
-        editUserToggle: false
+        editUserToggle: false,
+        firstname: this.props.user.firstname,
+        lastname: this.props.user.lastname,      
+        email: this.props.user.email,      
+        isadmin: this.props.user.isadmin,
       })
     }
 
@@ -106,22 +110,43 @@ class MyAccount extends Component {
               !editUserToggle ? (
                 <div className="userInfoContainer">
                   <div className="userInfo">
-                    <p>First Name: {this.state.firstname}</p>
-                    <p>Last Name: {this.state.lastname}</p>
-                    <p>Email: {this.state.email}</p>
+                    <div className="firstNameBox">
+                      <p>First Name</p>
+                      <p>{this.state.firstname}</p>
+                    </div>
+                    <div className="lastNameBox">
+                      <p>Last Name</p>
+                      <p>{this.state.lastname}</p>
+                    </div>
+                    <div className="emailBox">
+                      <p>Email</p>
+                      <p>{this.state.email}</p>
+                    </div>
                   </div>
                   <button onClick={this.handleEditUserToggle}>Edit</button>
                 </div>
               ) : (
-                <div>
-                  {/* <input name='firstname' value={this.state.firstname} onChange={this.handleOnChange}/> */}
-                  <input name='firstname' value={this.state.firstname} onChange={this.handleOnChange}/>
-                  {/* <input name='lastname' value={this.state.lastname} onChange={this.handleOnChange}/> */}
-                  <input name='lastname' value={this.state.lastname} onChange={this.handleOnChange}/>
-                  {/* <input name='email' value={this.state.email} onChange={this.handleOnChange}/> */}
-                  <input name='email' value={this.state.email} onChange={this.handleOnChange}/>
-                  <button onClick={() => this.updateUser()}> Save </button>
-                  <button onClick={this.handleCancelEdit}> Cancel </button>
+                <div className="userInfoContainer">
+                  <div className="userInfoInput">
+                    <div className="firstNameInputBox">
+                      <p>First Name</p>
+                      <input name='firstname' value={this.state.firstname} onChange={this.handleOnChange}/>  
+                    </div> 
+                    <div className="lastNameInputBox">
+                      <p>Last Name</p>
+                      <input name='lastname' value={this.state.lastname} onChange={this.handleOnChange}/>    
+                    </div>  
+                    <div className="emailInputBox">
+                      <p>Email</p>
+                      <input name='email' value={this.state.email} onChange={this.handleOnChange}/>
+                    </div>
+                    <div className="esButtons">
+                      <button onClick={this.handleCancelEdit}> Cancel </button>
+                      <div className="saveButton">
+                        <button onClick={() => this.updateUser()}> Save </button>
+                      </div>
+                    </div>             
+                  </div>
                 </div>
               )
             }

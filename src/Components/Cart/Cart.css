@@ -20,7 +20,7 @@
 .cartMain {
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: 150vh;
 }
 
 .cartItemsHeader {
@@ -32,6 +32,27 @@
     border-bottom: solid 1px grey;
     padding-right: 20px;
 
+}
+
+.cartItemsHeader p {
+    width: 181px;
+}
+
+
+.cartItemsHeader :nth-child(2) {
+    display: flex;
+    justify-content: center;
+    padding-right: 63px;
+}
+.cartItemsHeader :nth-child(3) {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5px;
+    
+}
+.cartItemsHeader :nth-child(4) {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .cartRight { 

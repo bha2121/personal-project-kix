@@ -13,7 +13,9 @@ class LoginRegister extends Component {
       lastname: '',
       email: '',
       password: '',
-      isadmin: false
+      isadmin: false,
+      loginToggle: true,
+
     }
   }
 
@@ -45,62 +47,69 @@ class LoginRegister extends Component {
       [name]: value
     })
   }
+
+
+  handleLoginToggle = () => {
+    this.setState({
+      loginToggle: true
+    })
+  }
+
+  handleSignupToggle = () => {
+    console.log('stog')
+    this.setState({
+      loginToggle: false
+    })
+  }
   
   
   render() {
     // console.log(this.props)
     
     return (
-      <div>
+      <div className="loginPage">
         <header className="loginHeader"></header>
-        <div className="register">
-          <p>
-            <span>First Name:</span>
-            <input name='firstname' 
-                    type='text' 
-                    onChange={this.handleOnChange} />
-          </p>
-          <p>
-            <span>Last Name:</span>
-            <input name='lastname' 
-                    type='text' 
-                    onChange={this.handleOnChange} />
-          </p>
-          <p>
-            <span>Email:</span>
-            <input name='email' 
-                    type='text' 
-                    onChange={this.handleOnChange} />
-          </p>
-          <p>
-            <span>Password:</span>
-            <input name='password' 
-                    type='password' 
-                    onChange={this.handleOnChange} />
-          </p>
+        <main className="mainLoginContainer">
+          <div className="loginSignupContainer">
+            <div className="loginSignupTop">
+              <div className="loginToggle" onClick={()=> this.handleLoginToggle()}>
+                <p>LOG IN</p>
+              </div>
+              <div className="signupToggle" onClick={()=> this.handleSignupToggle()}>
+                <p>SIGN UP</p>
+              </div>
+            </div>
 
-          <button onClick={()=> this.register()}> Register </button>
-        </div>
+            {
+              this.state.loginToggle ?(
+            <div className="loginContainer">
+              <div className="loginInputs">
+                <input name='email' placeholder="Email" onChange={this.handleOnChange} autoComplete="off"/>
+                <input name='password' placeholder="Password" type='password' onChange={this.handleOnChange} autoComplete="off"/>
+              </div>
+              <button onClick={() => this.login()}> LOG IN</button>
+            </div>
+              ):(
+            <div className="signupContainer">
+              <div className="signupInputs">
+                <input name='firstname' placeholder="First Name" onChange={this.handleOnChange} autoComplete="off" />
+                <input name='lastname' placeholder="Last Name" onChange={this.handleOnChange} autoComplete="off" />
+                <input name='email' placeholder="Email" onChange={this.handleOnChange} autoComplete="off" />
+                <input name='password' placeholder="Password" type='password' onChange={this.handleOnChange} autoComplete="off" />
+              </div>
+              <button onClick={()=> this.register()}>SIGN UP</button>
+            </div>
+                )
+            }
 
-        <div className="login">
-          <p>
-            <span>Email:</span>
-            <input name='email' 
-                    type='text' 
-                    onChange={this.handleOnChange} />
-          </p>
-          <p>
-            <span>Password:</span>
-            <input name='password' 
-                    type='password' 
-                    onChange={this.handleOnChange} />
-          </p>
+          </div>
 
-          <button onClick={() => this.login()}> Log in </button>
-        </div>
-
-
+        </main>
+        <footer>
+          
+        </footer>
       </div>
+
     );
   }
 }

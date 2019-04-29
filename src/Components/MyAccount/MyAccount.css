@@ -120,20 +120,308 @@
 
 .userInfoContainer{
     display: flex;
-    flex-direction: row;
-    padding-left: 250px;
-    height: 200px;
-    align-items: center;
     
+    padding-left: 260px;
+    height: 400px;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+
+.userInfoContainer button{
+    margin-top: 20px;
+    border-radius: 20px;
+    /* border: 1px solid #FF4B2B; */
+    border: 1px solid rgba(165, 162, 162, 0.87);
+    /* background-color: #FF4B2B; */
+    background-color: rgba(165, 162, 162, 0.87);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    /* padding: 12px 45px; */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	margin-top: 30px;
+    cursor: pointer;
+    width: 80px;
+    padding: 12px 15px;
+    margin-right: 10px;
+}
+
+.userInfoContainer button:active {
+	transform: scale(0.90);
+}
+
+.userInfoContainer button:focus {
+	outline: none;
 }
 
 .userInfo{
-    margin-right: 30px
+    margin-right: 30px;
+    margin-top: 70px;
+    color: black;
 }
 
-.userInfoContainer button{
-    margin-top: -95px
+.firstNameBox {
+    height: 50px;
+    width: 475px;
+    border: 1px solid black;
+    margin-top: 1rem;
+    padding-left: 8px;
+    position: relative
 }
+
+.firstNameBox :nth-child(1) {
+    font-size: 11px;
+    /* position: relative; */
+    margin-top: -8px;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+    height: 20px;
+    width: 65px;
+    z-index:1000;
+    background: white;
+    text-align: center;
+    color: black;
+}
+
+.firstNameBox :nth-child(2) {
+    margin: 0 0;
+    padding-left: 3px
+}
+
+.lastNameBox {
+    height: 50px;
+    width: 475px;
+    border: 1px solid black;
+    margin-top: 1rem;
+    padding-left: 8px;
+    position: relative
+}
+
+.lastNameBox :nth-child(1) {
+    font-size: 11px;
+    /* position: relative; */
+    margin-top: -8px;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+    height: 20px;
+    width: 65px;
+    z-index:1000;
+    background: white;
+    text-align: center;
+    color: black;
+}
+
+.lastNameBox :nth-child(2) {
+    margin: 0 0;
+    padding-left: 3px
+}
+
+.emailBox {
+    height: 50px;
+    width: 475px;
+    border: 1px solid black;
+    margin-top: 1rem;
+    padding-left: 8px;
+    position: relative
+}
+
+.emailBox :nth-child(1) {
+    font-size: 11px;
+    /* position: relative; */
+    margin-top: -8px;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+    height: 20px;
+    width: 35px;
+    z-index:1000;
+    background: white;
+    text-align: center;
+    color: black;
+}
+
+.emailBox :nth-child(2) {
+    margin: 0 0;
+    padding-left: 3px
+}
+
+
+
+
+
+
+
+
+.userInfoInput{
+    margin-right: 30px;
+    margin-top: 70px;
+    color: grey;
+}
+
+.firstNameInputBox input::placeholder{
+    color: grey;
+    font-style: italic
+}
+
+
+.firstNameInputBox input {
+    font-size: inherit;
+    height: 35px;
+    width: 460px;
+    outline: none;
+    padding-bottom: 17px;
+    margin-left: -10px;
+    border: none;
+    color: grey;
+}
+
+.firstNameInputBox {
+    height: 50px;
+    width: 475px;
+    border: 1px solid #FA9292;
+    margin-top: 1rem;
+    padding-left: 8px;
+    position: relative
+}
+
+.firstNameInputBox :nth-child(1) {
+    font-size: 11px;
+    /* position: relative; */
+    margin-top: -8px;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+    height: 20px;
+    width: 65px;
+    z-index:1000;
+    background: white;
+    text-align: center;
+    color: black;
+}
+
+.firstNameInputBox :nth-child(2) {
+    margin: 0 0;
+    padding-left: 2.8px
+}
+
+
+
+.lastNameInputBox input {
+    font-size: inherit;
+    height: 35px;
+    width: 460px;
+    outline: none;
+    padding-bottom: 17px;
+    margin-left: -10px;
+    border: none;
+    color: grey;
+}
+
+.lastNameInputBox {
+    height: 50px;
+    width: 475px;
+    border: 1px solid black;
+    margin-top: 1rem;
+    padding-left: 8px;
+    position: relative
+}
+
+.lastNameInputBox :nth-child(1) {
+    font-size: 11px;
+    /* position: relative; */
+    margin-top: -8px;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+    height: 20px;
+    width: 65px;
+    z-index:1000;
+    background: white;
+    text-align: center;
+    color: black;
+}
+
+.lastNameInputBox :nth-child(2) {
+    margin: 0 0;
+    padding-left: 2.8px
+}
+
+
+
+
+.emailInputBox input {
+    font-size: inherit;
+    height: 35px;
+    width: 460px;
+    outline: none;
+    padding-bottom: 17px;
+    margin-left: -10px;
+    border: none;
+    color: grey;
+}
+
+.emailInputBox input:focus {
+    color: black;
+    
+    
+}
+
+.emailInputBox {
+    height: 50px;
+    width: 475px;
+    border: 1px dashed black;
+    margin-top: 1rem;
+    padding-left: 8px;
+    position: relative
+}
+
+
+.emailInputBox :nth-child(1) {
+    font-size: 11px;
+    /* position: relative; */
+    margin-top: -8px;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+    height: 20px;
+    width: 35px;
+    z-index:1000;
+    background: white;
+    text-align: center;
+    
+}
+
+.emailInputBox :nth-child(2) {
+    margin: 0 0;
+    padding-left: 2.8px
+}
+
+.esButtons {
+    display: flex;
+    flex: row;
+}
+
+.userInfoInput  button {
+    background: rgb(248, 110, 110);
+}
+
+.saveButton button {
+    background: green
+}
+
+
+
+
+
+
+
+
+
 
 
 
