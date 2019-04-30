@@ -42,7 +42,7 @@ class NavBar extends Component {
             <Link to='/myaccount'>
               <button>My Account</button>
             </Link>
-            <a href="http://localhost:4000/logout">
+            <a href={process.env.REACT_APP_LOGOUT}>
               <button >Logout</button>
             </a>
             <Link to='/cart'>

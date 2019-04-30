@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs')
 
+
 module.exports = {
     register: async (req, res) =>{
         const {firstname, lastname, email, password, isadmin} = req.body
@@ -61,7 +62,7 @@ module.exports = {
     logout: (req, res) => {
         
         req.session.destroy()
-        res.redirect('http://localhost:3000/#/')
+        res.redirect(process.env.REACT_APP_REDIRECT)
     },
 
     // editUser: (req, res) => {
