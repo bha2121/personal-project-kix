@@ -27,7 +27,8 @@
 .myAccountUserName{
     /* border: green solid 1px; */
     height: 10%;
-    background-color: rgb(184, 182, 182);
+    /* background-color: rgb(184, 182, 182); */
+    background-color: rgba(165, 162, 162, 0.87);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +37,7 @@
 .myAccountNameText{
     text-align: center;
     height: 30px;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     font-size: 20px;
     letter-spacing: 1px;
@@ -62,7 +63,7 @@
     flex-direction: column;
     padding-top: 30px;
     align-items: center;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
     font-weight: 600;
     background-color: #F9F9F9;
@@ -84,7 +85,7 @@
     align-items: center;
     justify-content: center;
     /* padding-left: 40px; */
-    font-family: sans-serif;
+    font-family: sans-'Montserrat', sans-serif;
     font-weight: 900
 }
 
@@ -99,7 +100,8 @@
 .myProfileFlag{
     height:50px;
     width:150px;
-    background-color: #FA9292;
+    /* background-color: #FA9292; */
+    background: #d92b2b;
     margin-top: -10px;
     display: flex;
     align-items: center;
@@ -112,7 +114,8 @@
 .flagTriangle {
     width: 0;
     height: 0;
-    border-bottom: 10px solid rgb(248, 110, 110);
+    /* border-bottom: 10px solid rgb(248, 110, 110); */
+    border-bottom: 10px solid rgb(177, 13, 13);
     border-left: 10px solid transparent;
     margin-top: -10px
     
@@ -408,11 +411,13 @@
 }
 
 .userInfoInput  button {
-    background: rgb(248, 110, 110);
+    background: #d92b2b;
 }
 
 .saveButton button {
-    background: green
+    background: rgb(25, 164, 65);
+    /* background: rgb(33, 78, 228); */
+    
 }
 
 

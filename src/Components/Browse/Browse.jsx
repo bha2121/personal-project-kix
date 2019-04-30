@@ -19,6 +19,7 @@ class Browse extends Component {
         adidasN: '',
         brandToggle: true,
         sizeToggle: true,
+        filterToggle: false,
       }
     }
 
@@ -89,6 +90,9 @@ class Browse extends Component {
           shoes: res.data,
           shoesTotal: res.data.length
       })
+      this.filterToggleOff()
+      console.log('workkkk')
+
     }).catch(err => console.log('AXIOS GETALLSHOES ERR', err))
   }
 
@@ -100,6 +104,9 @@ class Browse extends Component {
         shoes: jordanArr,
         shoesTotal: jordanArr.length
       })
+      this.filterToggleOn()
+      console.log('workkkk')
+
     }).catch(err => console.log('JORDAN ERR', err))
   }
 
@@ -111,6 +118,9 @@ class Browse extends Component {
         shoes: nikeArr,
         shoesTotal: nikeArr.length
       })
+      this.filterToggleOn()
+      console.log('workkkk')
+
     }).catch(err => console.log('NIKE FILTER ERR', err))
   }
   
@@ -122,6 +132,9 @@ class Browse extends Component {
         shoes: adidasArr,
         shoesTotal: adidasArr.length
       })
+      this.filterToggleOn()
+          console.log('workkkk')
+
     }).catch(err => console.log('ADIDAS ERR', err))
   }
 
@@ -147,6 +160,8 @@ class Browse extends Component {
       shoes: size,
       shoesTotal: size.length,
     })
+    console.log("wokr?")
+    this.filterToggleOn()
   }
 
   lowestPriceSortState =(e)=>{
@@ -187,6 +202,18 @@ class Browse extends Component {
     })
   }
 
+  filterToggleOn = () => {
+    this.setState({
+      filterToggle: true
+    })
+  }
+
+  filterToggleOff = () => {
+    this.setState({
+      filterToggle: false
+    })
+  }
+
   
   // lowestPriceState =(e)=>{
   //   axios.get('/api/getallshoes')
@@ -201,7 +228,7 @@ class Browse extends Component {
 
   render() {
   console.log(this.state.jordanN)
-  const {brandToggle, sizeToggle} = this.state
+  const {brandToggle, sizeToggle, filterToggle} = this.state
     return (
     <div>
       <div className="mainLanding">
@@ -209,10 +236,15 @@ class Browse extends Component {
         <main className='browseMainContainer'>
 
           <div className="browseSideBarContainer">
-            <div className="refineResults">
-              Filtered Results: ({this.state.shoesTotal})
-            </div>
-            <button onClick={()=>this.showAllProducts()}> ALL PRODUCTS </button>
+            {
+              !filterToggle ? (
+                <div className="allProducts" > </div>
+              ) : (
+                <button className="allProducts" style={{color: "red", outline: 'none', fontWeight:900, fontSize:16}} onClick={()=>this.showAllProducts()}> 
+                  CLEAR FILTER <i className="fas fa-times-circle"></i>
+                </button>
+              )
+            }
             {
               !brandToggle ? (
               <button className="categoryButton" onClick={() => this.brandToggleOn()}><span style={{fontSize:13, fontWeight:600}} > BRAND </span><span style={{fontSize:20, fontWeight:600}}> + </span></button>
@@ -253,9 +285,14 @@ class Browse extends Component {
 
           <div className="browseProductsContainerRight">
             <div className="browseSort">
-              <span>Sort By:</span>
-              <button onClick={()=>this.lowestPriceSortState()}>Lowest Price</button>
-              <button onClick={()=>this.highestPriceSortState()}>Highest Price</button>
+              <div className="refineResults">
+                Filtered Results: ({this.state.shoesTotal})
+              </div>
+              <div className="sortBy">
+                <span>Sort By:</span>
+                <button onClick={()=>this.highestPriceSortState()}>Highest Price ↑</button>
+                <button onClick={()=>this.lowestPriceSortState()}>Lowest Price ↓</button>
+              </div>
             </div>
             <div className="browseRowContainer">
               <div className="row">

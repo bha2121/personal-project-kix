@@ -31,7 +31,7 @@ nav {
 }
 
 .linksContainer{
-    width: 25%;
+    width: 30%;
     display: flex;
     justify-content: space-between;
     
@@ -51,6 +51,7 @@ nav {
     letter-spacing: 1px;
     outline:none;
     font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
     
     
 

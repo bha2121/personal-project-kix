@@ -51,6 +51,7 @@ class MyAccount extends Component {
       // const {id} = this.props.user.user
       const {id} = this.props.user
       const userBody = {id, firstname, lastname, email,}
+      console.log('maybe si?')
       axios.put(`/api/auth/edituser`, userBody).then(res => {
         // console.log('edit response', res)
         this.setState({
@@ -62,6 +63,7 @@ class MyAccount extends Component {
           editUserToggle: false
         })
         this.props.getData()
+        console.log("go through?")
       })
       .catch(err => console.log('update user ERR', err))
     }

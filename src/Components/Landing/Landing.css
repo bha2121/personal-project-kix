@@ -114,9 +114,11 @@
 }
 
 .rowHeaderJ p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-end;
+    font-weight: 500
 }
 .rowHeaderN{
     width: 1010px;
@@ -134,8 +136,10 @@
 }
 
 .rowHeaderN p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-end;
 }
 
 .rowHeaderA{
@@ -154,7 +158,9 @@
 }
 
 .rowHeaderA p{
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-end;
 }
 

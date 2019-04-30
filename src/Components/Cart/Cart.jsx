@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import './Cart.css'
 import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
-import slckix4 from './slckix4.png'
+import slckixRed from './slckixRed.png'
 
 
 class Cart extends Component {
@@ -116,7 +116,7 @@ class Cart extends Component {
                 <div className="strCheck">
                   <StripeCheckout
                   name="SLC KiX"
-                  image={slckix4}
+                  image={slckixRed}
                   email="contactus@slckix.com"
                   
                   token= {this.onToken}

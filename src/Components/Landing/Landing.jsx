@@ -9,8 +9,9 @@ import jordanLogo2 from './logos/jordanLogo2.png'
 import nikeLogo from './logos/nikeLogo.png'
 import adidasLogo2 from './logos/adidasLogo2.png'
 import adcjordannikeupdated from './logos/adcjordannikeupdated.png'
-import shippingBupdated from './logos/shippingBupdated.png'
-import supremeUpdated from './logos/supremeUpdated.png'
+import shippingupdated2 from './logos/shippingupdated2.png'
+
+import shoebanner3 from './logos/shoebanner3.png'
 // import headerLogo from './jordanHeader.jpeg'
 
 class Landing extends Component {
@@ -70,10 +71,10 @@ class Landing extends Component {
                   showThumbs={false} infiniteLoop={true} axis={'vertical'} 
                   transitionTime={800} stopOnHover={false} showIndicators={false}>
                 <div>
-                    <img src={supremeUpdated}/>
+                    <img src={shoebanner3}/>
                 </div>
                 <div>
-                    <img src={shippingBupdated}/>
+                    <img src={shippingupdated2}/>
                 </div>
                 <div>
                     <img src={adcjordannikeupdated}/>
