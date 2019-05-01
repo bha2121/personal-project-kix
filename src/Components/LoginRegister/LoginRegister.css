@@ -60,8 +60,8 @@
 	transition-duration: .7s;
 }
 
-.loginToggle:active{
-	font-size: 9px;
+.loginToggle p:active{
+	transform: scale(.9)
 }
 
 
@@ -98,9 +98,10 @@
 	transition-duration: .7s;
 }
 
-.signupToggle:active{
-	font-size: 9px;
+.signupToggle p:active{
+	transform: scale(.9)
 }
+
 
 
 
@@ -145,10 +146,12 @@
 }
 
 .loginInputs input:focus {
-  border-bottom: solid 2.5px rgba(0, 0, 0, 0.609);
-  transition-delay: .07s;
+	font-size: 20px;
+  border-bottom: solid 2.0px rgba(0, 0, 0, 0.609);
   transition-duration: .7s;
+  /* transition-delay: .0s; */
 }
+
 
 
 .loginContainer button {
@@ -190,10 +193,12 @@
 .signupContainer button {
 	border-radius: 20px;
     /* border: 1px solid #FF4B2B; */
-    border: 1px solid #d92b2b;
+    border: 2px solid #d92b2b;
     /* background-color: #FF4B2B; */
     background-color: #d92b2b;
-    color: #FFFFFF;
+    /* background-color: white; */
+    /* color: #d92b2b; */
+    color: white;
     font-size: 12px;
     font-weight: bold;
     padding: 12px 45px;
@@ -245,9 +250,9 @@
 }
 
 .signupInputs input:focus {
-  border-bottom: solid 2.5px rgba(0, 0, 0, 0.609);
-  transition-delay: .07s;
-  transition-duration: 1s;
+  font-size: 20px;
+  border-bottom: solid 2.0px rgba(0, 0, 0, 0.609);
+  transition-duration: .7s;
 }
 
 /* .signupInputs :nth-child(4):focus {

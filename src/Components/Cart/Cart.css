@@ -14,14 +14,24 @@
     font-family: 'Montserrat', sans-serif
 }
 
-.cartPage {
-    
-}
+
 
 .cartMain {
     display: flex;
     flex-direction: row;
     height: 150vh;
+}
+
+.cartMainEmpty {
+    display: flex;
+    justify-content: center;
+    height: 150vh;
+    
+}
+
+.cartMainEmpty h2{
+   padding-top: 100px;
+   font-size: 35px
 }
 
 .cartItemsHeader {
@@ -209,4 +219,27 @@
     padding-top: 16px;
   }
 
+  .swal-button {
+    border-radius: 20px;
+    background-color: #FF4B2B;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    width: 80px;
+    padding: 12px 15px
+  }
+
+  .swal-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px
+  }
+
+  .swal-title {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .swal-button:hover {
+    background: black;
+    
+  }
 

@@ -99,6 +99,7 @@ class MyAccount extends Component {
             </div>
             <div className="myAccountSidebarLinks">
               <p>Profile</p>
+              <p>Addresses</p>
               <p>Orders</p>
             </div>
           </div>
@@ -159,7 +160,16 @@ class MyAccount extends Component {
             </div>
           </div>
         </div>
-        <footer className="accountFooter">footer</footer>
+        <footer className="sneakerFoot">
+          <p> Copyright © 2019 SLC KiX. All rights reserved</p>
+          <div className="footerLinksContainer">
+            <p>About</p>
+            <p>|</p>
+            <p>Contact Us</p>
+            <p>|</p>
+            <p>FAQ</p>
+          </div>
+        </footer>
       </div>
     );
   }

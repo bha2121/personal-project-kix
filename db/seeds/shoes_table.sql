@@ -105,7 +105,7 @@ INSERT INTO shoes (
     'Travis Scott-Cactus Jack',
     9,
     'PINE GREEN/SAIL-BLACK',
-    700,
+    650,
     '06/09/2018',
     2,
     'https://stockx.imgix.net/Air-Jordan-4-Retro-Travis-Scott-Cactus-Jack-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1538080256&w=1600'
@@ -176,6 +176,17 @@ INSERT INTO shoes (
     1,
     'https://stockx.imgix.net/adidas-Yeezy-Boost-350-V2-Static-Reflective-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1545956613'
 ),
+(
+    'Jordan',
+    '1 Retro High',
+    'ROTY',
+    9,
+    'GOLD HARVEST/BLACK-SAIL',
+    275,
+    '11/17/2018',
+    1,
+    'https://stockx.imgix.net/Air-Jordan-1-Retro-High-Rookie-Of-The-Year-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1540493582'
+),
 -- (
 --     'Adidas',
 --     'Yeezy Boost 350 V2',
@@ -193,7 +204,7 @@ INSERT INTO shoes (
     'Sesame',
     9.5,
     'SESAME/SESAME/SESAME',
-    330,
+    320,
     '11/23/2018',
     1,
     'https://stockx.imgix.net/Adidas-Yeezy-Boost-350-V2-Sesame-Thumb.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1541007855'
@@ -204,7 +215,7 @@ INSERT INTO shoes (
     'Sesame',
     5.5,
     'SESAME/SESAME/SESAME',
-    330,
+    400,
     '11/23/2018',
     1,
     'https://stockx.imgix.net/Adidas-Yeezy-Boost-350-V2-Sesame-Thumb.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1541007855'
@@ -215,7 +226,7 @@ INSERT INTO shoes (
     'Frozen Yellow',
     9,
     'SEMI FROZEN YELLOW/RAW STEEL/RED',
-    300,
+    280,
     '11/18/2017',
     1,
     'https://stockx.imgix.net/Adidas-Yeezy-Boost-350-V2-Semi-Frozen-Yellow-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256'
@@ -226,7 +237,7 @@ INSERT INTO shoes (
     'Black',
     9,
     'BLACK/BLACK/BLACK',
-    300,
+    930,
     '09/07/2018',
     1,
     'https://stockx.imgix.net/adidas-Y-3-Runner-4D-II-Black.png?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256'
@@ -311,11 +322,281 @@ INSERT INTO shoes (
 (
     'Jordan',
     '1 Retro High',
-    'ROTY',
+    'Blue Chill',
     9,
-    'GOLD HARVEST/BLACK-SAIL',
-    275,
-    '11/17/2018',
+    'OBSIDIAN/BLUE CHILL-WHITE',
+    300,
+    '02/14/2019',
     1,
-    'https://stockx.imgix.net/Air-Jordan-1-Retro-High-Rookie-Of-The-Year-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1540493582'
+   'https://stockx.imgix.net/Air-Jordan-1-Retro-High-UNC-Patent-W-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1547848301'
 ),
+(
+    'Adidas',
+    'Yeezy Boost 350 V2',
+    'Clay',
+    4.5,
+    'CLAY/CLAY/CLAY',
+    380,
+    '03/30/2019',
+    1,
+    'https://stockx.imgix.net/adidas-Yeezy-Boost-350-V2-Clay-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1551987026'
+),
+(
+    'Adidas',
+    'Yeezy Boost 350 V2',
+    'Clay',
+    5,
+    'CLAY/CLAY/CLAY',
+    410,
+    '03/30/2019',
+    1,
+    'https://stockx.imgix.net/adidas-Yeezy-Boost-350-V2-Clay-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1551987026'
+),
+(
+    'Adidas',
+    'Yeezy Boost 350 V2',
+    'Clay',
+    5.5,
+    'CLAY/CLAY/CLAY',
+    440,
+    '03/30/2019',
+    1,
+    'https://stockx.imgix.net/adidas-Yeezy-Boost-350-V2-Clay-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1551987026'
+),
+(
+    'Adidas',
+    'Yeezy Boost 350 V2',
+    'Clay',
+    6,
+    'CLAY/CLAY/CLAY',
+    430,
+    '03/30/2019',
+    2,
+    'https://stockx.imgix.net/adidas-Yeezy-Boost-350-V2-Clay-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1551987026'
+),
+(
+    'Adidas',
+    'Yeezy Boost 350 V2',
+    'Clay',
+    9,
+    'CLAY/CLAY/CLAY',
+    360,
+    '03/30/2019',
+    1,
+    'https://stockx.imgix.net/adidas-Yeezy-Boost-350-V2-Clay-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1551987026'
+),
+(
+    'Adidas',
+    'Yeezy Boost 350 V2',
+    'Clay',
+    11,
+    'CLAY/CLAY/CLAY',
+    360,
+    '03/30/2019',
+    2,
+    'https://stockx.imgix.net/adidas-Yeezy-Boost-350-V2-Clay-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1551987026'
+),
+(
+    'Nike',
+    'Air Max 97',
+    'Off-White',
+    9,
+    'WHITE/CONE-ICE BLUE',
+    1300,
+    '11/01/2017',
+    1,
+    'https://stockx.imgix.net/Nike-Air-Max-97-Off-White-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1545234240'
+),
+
+(
+    'Jordan',
+    '1 Retro High',
+    'Spider-Man Origin (GS)',
+    7,
+    'GYM RED/BLACK-WHITE-PHOTO BLUE',
+    230,
+    '02/14/2019',
+    1,
+   'https://stockx.imgix.net/Air-Jordan-1-Retro-High-Chicago-Crystal-GS-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1546754307'
+),
+(
+    'Adidas',
+    'Yeezy 500',
+    'Salt',
+    9,
+    'SALT/SALT/SALT',
+    300,
+    '11/30/2018',
+    2,
+    'https://stockx.imgix.net/adidas-Yeezy-500-Salt-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1544024798'
+),
+(
+    'Adidas',
+    'Yeezy 500',
+    'Salt',
+    4,
+    'SALT/SALT/SALT',
+    540,
+    '11/30/2018',
+    1,
+    'https://stockx.imgix.net/adidas-Yeezy-500-Salt-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1544024798'
+),
+(
+    'Adidas',
+    'Yeezy 500',
+    'Salt',
+    6,
+    'SALT/SALT/SALT',
+    500,
+    '11/30/2018',
+    1,
+    'https://stockx.imgix.net/adidas-Yeezy-500-Salt-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1544024798'
+),
+(
+    'Jordan',
+    '1 Retro High',
+    'Turbo Green',
+    8,
+    'TURBO GREEN/SAIL-WHITE-LIGHT',
+    270,
+    '02/15/2019',
+    1,
+   'https://stockx.imgix.net/Air-Jordan-1-Retro-High-Turbo-Green-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1549055395'
+),
+(
+    'Adidas',
+    'Yeezy Boost 700',
+    'Mauve',
+    9,
+    'MAUVE/MAUVE/MAUVE',
+    310,
+    '10/27/2018',
+    1,
+    'https://stockx.imgix.net/Adidas-Yeezy-700-Mauve-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1539982972'
+),
+(
+    'Adidas',
+    'Yeezy Boost 700',
+    'Mauve',
+    6,
+    'MAUVE/MAUVE/MAUVE',
+    370,
+    '10/27/2018',
+    1,
+    'https://stockx.imgix.net/Adidas-Yeezy-700-Mauve-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1539982972'
+),
+(
+    'Adidas',
+    'Yeezy Boost 700',
+    'Mauve',
+    6,
+    'MAUVE/MAUVE/MAUVE',
+    360,
+    '10/27/2018',
+    2,
+    'https://stockx.imgix.net/Adidas-Yeezy-700-Mauve-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1539982972'
+),
+(
+    'Adidas',
+    'Yeezy 500',
+    'Utility Black',
+    5.5,
+    'UTILITY BLACK',
+    550,
+    '07/07/2018',
+    3,
+    'https://stockx.imgix.net/Adidas-Yeezy-500-Utility-Black-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256'
+),
+(
+    'Jordan',
+    'IV Retro',
+    'Travis Scott-Cactus Jack',
+    8,
+    'UNIVERSITY BLUE/BLACK-VARSITY',
+    600,
+    '06/09/2018',
+    2,
+    'https://stockx.imgix.net/Air-Jordan-4-Retro-Travis-Scott-Cactus-Jack-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1538080256&w=1600'
+),
+(
+    'Nike',
+    'SB Dunk Low',
+    'Concepts Green Lobster',
+    9.5,
+    'GREEN STONE/LEGION GREEN',
+    425,
+    '12/14/2018',
+    1,
+   'https://stockx.imgix.net/Nike-SB-Dunk-Low-Concepts-Green-Lobster-1-1.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1555535998&w=1600'
+),
+(
+    'Nike',
+    'SB Dunk Low',
+    'Concepts Green Lobster',
+    8.5,
+    'GREEN STONE/LEGION GREEN',
+    450,
+    '12/14/2018',
+    1,
+   'https://stockx.imgix.net/Nike-SB-Dunk-Low-Concepts-Green-Lobster-1-1.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1555535998&w=1600'
+),
+(
+    'Nike',
+    'SB Dunk Low',
+    'Concepts Green Lobster',
+    8.5,
+    'GREEN STONE/LEGION GREEN',
+    455,
+    '12/14/2018',
+    1,
+   'https://stockx.imgix.net/Nike-SB-Dunk-Low-Concepts-Green-Lobster-1-1.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1555535998&w=1600'
+),
+(
+    'Jordan',
+    '1 Retro High',
+    'Hyper Crimson',
+    9,
+    'NEUTRAL GREY/HYPER CRIMSON',
+    200,
+    '01/24/2019',
+    2,
+   'https://stockx.imgix.net/Air-Jordan-1-Retro-High-Neutral-Grey-Hyper-Crimson-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1547669825'
+),
+(
+    'Jordan',
+    '1 Retro High',
+    'Hyper Crimson',
+    10,
+    'NEUTRAL GREY/HYPER CRIMSON',
+    200,
+    '01/24/2019',
+    2,
+   'https://stockx.imgix.net/Air-Jordan-1-Retro-High-Neutral-Grey-Hyper-Crimson-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1547669825'
+),
+(
+    'Jordan',
+    '1 Retro High',
+    'Turbo Green (GS)',
+    7,
+    'TURBO GREEN/SAIL-WHITE-LIGHT',
+    140,
+    '02/15/2019',
+    2,
+   'https://stockx.imgix.net/Air-Jordan-1-Retro-High-Turbo-Green-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1549055395'
+),
+(
+    'Adidas',
+    'Yeezy 500',
+    'Super Moon Yellow',
+    5,
+    'SUPER MOON YELLOW',
+    400,
+    '06/09/2018',
+    1,
+    'https://stockx.imgix.net/Adidas-Yeezy-500-Moon-Yellow-Product.jpg?fit=fill&bg=FFFFFF&w=358&h=255&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256'
+)
+
+
+
+
+

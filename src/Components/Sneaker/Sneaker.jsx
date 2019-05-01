@@ -4,6 +4,7 @@ import './Sneaker.css'
 import { connect } from 'react-redux'
 import { setCart } from '../../ducks/cartReducer'
 import SneakerSizes from './SneakerSizes'
+import swal from 'sweetalert';
 
 
 class Sneaker extends Component {
@@ -31,6 +32,24 @@ class Sneaker extends Component {
     this.setState({
       selected: shoe_id
     })
+    axios.get(`/api/sneaker/${shoe_id}`).then(res => {
+      // console.log(res.data[0])
+      this.setState({
+        brand: res.data[0].brand,
+        model: res.data[0].model,
+        colorway: res.data[0].colorway,
+        colorscheme: res.data[0].colorscheme,
+        size: res.data[0].size,
+        img: res.data[0].img,
+        releasedate: res.data[0].releasedate,
+        sellingprice: res.data[0].sellingprice,
+        quantity: res.data[0].quantity,
+        shoe_id: res.data[0].shoe_id
+        // shoe: res.data[0]
+      });
+    })
+    
+
   }
 
   
@@ -65,13 +84,21 @@ class Sneaker extends Component {
   };
 
   handleAddToCart(shoe_id){
+    console.log('shoeiii', shoe_id)
     axios.post('/api/addtocart', {shoe_id})
     .then(res =>{
       this.props.setCart(res.data)
+      
+      swal({
+        title: `${res.data[0].brand} ${res.data[0].model} ${res.data[0].colorway} Size: ${res.data[0].size}`,
+        text: `Was Added to Cart` ,
+        icon: "success",
+      })
     })
     this.setState({
       selected: ''
     })
+    console.log("prrops her?", this.props)
   }
 
 
@@ -118,7 +145,14 @@ class Sneaker extends Component {
           </div>
         </main>
         <footer className="sneakerFoot">
-
+          <p> Copyright © 2019 SLC KiX. All rights reserved</p>
+          <div className="footerLinksContainer">
+            <p>About</p>
+            <p>|</p>
+            <p>Contact Us</p>
+            <p>|</p>
+            <p>FAQ</p>
+          </div>
         </footer>
       </div>
     )

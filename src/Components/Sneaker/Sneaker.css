@@ -38,7 +38,7 @@
 }
 
 .sneakerTitle {
-    padding-top: 25px;
+    padding-top: 12px;
     border-top: solid black 3px;
     border-left: solid black 1px;
     border-right: solid black 1px;
@@ -48,7 +48,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-bottom: solid black 4px
+    border-bottom: solid black 4px;
     
 }
 
@@ -106,7 +106,7 @@
     background: white;
     /* color: #666; */
     color: black;
-    border-color: #f1e8e8;
+    /* border-color: #f1e8e8; */
     margin: 12px 4.4px;
     border-radius: 4px;
     display: flex;
@@ -126,6 +126,10 @@
 
 .sizeTile button:focus {
     background: rgba(165, 162, 162, 0.87)
+}
+
+.sizeTile button:active {
+    transform: scale(.9)
 }
 
 
@@ -151,20 +155,8 @@
     outline: none;
     font-size: 17px;
     font-weight: 900;
-    animation: .6s sizeZoom;
 }
 
-  @keyframes sizeZoom {
-    0% {
-        transform: scale(.5);
-    } 
-    /* 50%{
-        transform: scale(.5)
-    } */
-    100% {
-        transform: none;
-    }
-  }
 
   .addToCartButton button{
     display: flex;

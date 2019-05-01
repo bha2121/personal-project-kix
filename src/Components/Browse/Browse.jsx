@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import BrowseShoes from '../BrowseShoes/BrowseShoes'
-import BrowseSideBar from '../BrowseSideBar/BrowseSideBar'
 import './Browse.css'
 import adcGrey2 from './logos/adcGrey2.png'
 import nikeGrey2 from './logos/nikeGrey2.png'
@@ -14,9 +13,9 @@ class Browse extends Component {
       this.state = {
         shoes: [],
         shoesTotal: '',
-        jordanN: '',
-        nikeN: '',
-        adidasN: '',
+        // jordanN: '',
+        // nikeN: '',
+        // adidasN: '',
         brandToggle: true,
         sizeToggle: true,
         filterToggle: false,
@@ -33,55 +32,32 @@ class Browse extends Component {
           shoesTotal: res.data.length
       })
 
-      let jordanSizes = res.data.map(item  => {
-        let size = 0
-        if (item.brand === 'Jordan'){
-          size = size +1
-          return size
-        } 
-        else {
-          size = 0
-          return size
+      var a = res.data.reduce((accumulator, current) => {
+        if (checkIfAlreadyExist(current)) {
+          return accumulator;
+        } else {
+          return [...accumulator, current];
         }
-      }).reduce((total, num) => total + num)
-      this.setState({
-        jordanN: jordanSizes
-      })
-
-      let nikeSizes = res.data.map(item  => {
-        let size = 0
-        if (item.brand === 'Nike'){
-          size = size +1
-          return size
-        } 
-        else {
-          size = 0
-          return size
+      
+        function checkIfAlreadyExist(currentVal) {
+          return accumulator.some((item) => {
+            return (item.model === currentVal.model&&
+                    item.colorway === currentVal.colorway);
+          });
         }
-      }).reduce((total, num) => total + num)
+      }, []);
+      
       this.setState({
-        nikeN: nikeSizes
-      })
-
-      let adidasSizes = res.data.map(item  => {
-        let size = 0
-        if (item.brand === 'Adidas'){
-          size = size +1
-          return size
-        } 
-        else {
-          size = 0
-          return size
-        }
-      }).reduce((total, num) => total + num)
-      this.setState({
-        adidasN: adidasSizes
+        shoes: a,
+        shoesTotal: a.length
       })
 
   }).catch(err => console.log('AXIOS GETALLSHOES ERR', err))
   }
 
   
+
+
 
   showAllProducts(){
     axios.get('/api/getallshoes')
@@ -90,8 +66,27 @@ class Browse extends Component {
           shoes: res.data,
           shoesTotal: res.data.length
       })
+      var a = res.data.reduce((accumulator, current) => {
+        if (checkIfAlreadyExist(current)) {
+          return accumulator;
+        } else {
+          return [...accumulator, current];
+        }
+      
+        function checkIfAlreadyExist(currentVal) {
+          return accumulator.some((item) => {
+            return (item.model === currentVal.model&&
+                    item.colorway === currentVal.colorway);
+          });
+        }
+      }, []);
+      
+      this.setState({
+        shoes: a,
+        shoesTotal: a.length
+      })
+
       this.filterToggleOff()
-      console.log('workkkk')
 
     }).catch(err => console.log('AXIOS GETALLSHOES ERR', err))
   }
@@ -104,8 +99,27 @@ class Browse extends Component {
         shoes: jordanArr,
         shoesTotal: jordanArr.length
       })
+      var a = jordanArr.reduce((accumulator, current) => {
+        if (checkIfAlreadyExist(current)) {
+          return accumulator;
+        } else {
+          return [...accumulator, current];
+        }
+      
+        function checkIfAlreadyExist(currentVal) {
+          return accumulator.some((item) => {
+            return (item.model === currentVal.model&&
+                    item.colorway === currentVal.colorway);
+          });
+        }
+      }, []);
+      
+      this.setState({
+        shoes: a,
+        shoesTotal: a.length
+      })
+
       this.filterToggleOn()
-      console.log('workkkk')
 
     }).catch(err => console.log('JORDAN ERR', err))
   }
@@ -118,8 +132,26 @@ class Browse extends Component {
         shoes: nikeArr,
         shoesTotal: nikeArr.length
       })
+      var a = nikeArr.reduce((accumulator, current) => {
+        if (checkIfAlreadyExist(current)) {
+          return accumulator;
+        } else {
+          return [...accumulator, current];
+        }
+      
+        function checkIfAlreadyExist(currentVal) {
+          return accumulator.some((item) => {
+            return (item.model === currentVal.model&&
+                    item.colorway === currentVal.colorway);
+          });
+        }
+      }, []);
+      
+      this.setState({
+        shoes: a,
+        shoesTotal: a.length
+      })
       this.filterToggleOn()
-      console.log('workkkk')
 
     }).catch(err => console.log('NIKE FILTER ERR', err))
   }
@@ -132,26 +164,29 @@ class Browse extends Component {
         shoes: adidasArr,
         shoesTotal: adidasArr.length
       })
+      var a = adidasArr.reduce((accumulator, current) => {
+        if (checkIfAlreadyExist(current)) {
+          return accumulator;
+        } else {
+          return [...accumulator, current];
+        }
+      
+        function checkIfAlreadyExist(currentVal) {
+          return accumulator.some((item) => {
+            return (item.model === currentVal.model&&
+                    item.colorway === currentVal.colorway);
+          });
+        }
+      }, []);
+      
+      this.setState({
+        shoes: a,
+        shoesTotal: a.length
+      })
       this.filterToggleOn()
-          console.log('workkkk')
 
     }).catch(err => console.log('ADIDAS ERR', err))
   }
-
-
-  // sizeFilter = (e) =>{
-  //   const {value} = e.target
-  //   axios.get('/api/getallshoes')
-  //   .then(res => {      
-  //     let sizeArr = res.data.filter((el)=> el.size === value)
-  //     this.setState({
-  //       shoes: sizeArr,
-  //       shoesTotal: sizeArr.length
-  //     })
-  //   })
-  // }
-
-
 
 
   sizeFilterState = (shoeSize) => {
@@ -160,7 +195,6 @@ class Browse extends Component {
       shoes: size,
       shoesTotal: size.length,
     })
-    console.log("wokr?")
     this.filterToggleOn()
   }
 
@@ -241,16 +275,16 @@ class Browse extends Component {
                 <div className="allProducts" > </div>
               ) : (
                 <button className="allProducts" style={{color: "red", outline: 'none', fontWeight:900, fontSize:16}} onClick={()=>this.showAllProducts()}> 
-                  CLEAR FILTER <i className="fas fa-times-circle"></i>
+                 <span>CLEAR FILTER</span>  <i className="fas fa-times-circle"></i>
                 </button>
               )
             }
             {
               !brandToggle ? (
-              <button className="categoryButton" onClick={() => this.brandToggleOn()}><span style={{fontSize:13, fontWeight:600}} > BRAND </span><span style={{fontSize:20, fontWeight:600}}> + </span></button>
+              <button className="categoryButton" onClick={() => this.brandToggleOn()}><span style={{fontSize:13, fontWeight:900}} > BRAND </span><span style={{fontSize:25, fontWeight:600}}> + </span></button>
               ) : (
               <div className="toggleBrandContainer">
-                <button className="categoryButton" onClick={()=> this.brandToggleOff() }> <span style={{fontSize:13, fontWeight:600}} > BRAND </span> <span style={{fontSize:20, fontWeight:600}}> - </span></button>
+                <button className="categoryButton" onClick={()=> this.brandToggleOff() }> <span style={{fontSize:13, fontWeight:900}} > BRAND </span> <span style={{fontSize:25, fontWeight:600}}> - </span></button>
                 <div className="toggledBrands">
                   <button onClick={()=>this.jordanFilter()}> <img src={jordGrey2} alt=""/> </button>
                   <button onClick={()=>this.nikeFilter()}> <img src={nikeGrey2} alt=""/> </button>
@@ -261,10 +295,10 @@ class Browse extends Component {
             }
             {
               !sizeToggle ? (
-              <button className="categoryButton" onClick={() => this.sizeToggleOn()}><span style={{fontSize:13, fontWeight:600}} > SIZE </span><span style={{fontSize:20, fontWeight:600}}> + </span></button>
+              <button className="categoryButton" onClick={() => this.sizeToggleOn()}><span style={{fontSize:13, fontWeight:900}} > SIZE </span><span style={{fontSize:25, fontWeight:600}}> + </span></button>
               ) : (
               <div className="toggleBrandContainer">
-                <button className="categoryButton" onClick={()=> this.sizeToggleOff() }> <span style={{fontSize:13, fontWeight:600}} > SIZE </span> <span style={{fontSize:20, fontWeight:600}}> - </span></button>
+                <button className="categoryButton" onClick={()=> this.sizeToggleOff() }> <span style={{fontSize:13, fontWeight:900}} > SIZE </span> <span style={{fontSize:25, fontWeight:600}}> - </span></button>
                 <div className="toggledBrands">
                   <button value="4.5" onClick={(e)=>this.sizeFilterState(e.target.value)}> 4.5 </button>
                   <button value="5" onClick={(e)=>this.sizeFilterState(e.target.value)}> 5 </button>
@@ -289,9 +323,9 @@ class Browse extends Component {
                 Filtered Results: ({this.state.shoesTotal})
               </div>
               <div className="sortBy">
-                <span>Sort By:</span>
-                <button onClick={()=>this.highestPriceSortState()}>Highest Price ↑</button>
-                <button onClick={()=>this.lowestPriceSortState()}>Lowest Price ↓</button>
+                <p>Sort By:</p>
+                <button onClick={()=>this.highestPriceSortState()}>Highest Price <span>↑</span></button>
+                <button onClick={()=>this.lowestPriceSortState()}>Lowest Price <span>↓</span></button>
               </div>
             </div>
             <div className="browseRowContainer">
@@ -306,8 +340,15 @@ class Browse extends Component {
           </div>
         </main>
       </div>
-        <footer>
-
+      <footer className="sneakerFoot">
+          <p> Copyright © 2019 SLC KiX. All rights reserved</p>
+          <div className="footerLinksContainer">
+            <p>About</p>
+            <p>|</p>
+            <p>Contact Us</p>
+            <p>|</p>
+            <p>FAQ</p>
+          </div>
         </footer>
     </div>
     );

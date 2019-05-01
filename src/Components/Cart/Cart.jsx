@@ -6,6 +6,8 @@ import './Cart.css'
 import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
 import slckixRed from './slckixRed.png'
+import swal from 'sweetalert';
+
 
 
 class Cart extends Component {
@@ -36,10 +38,18 @@ class Cart extends Component {
 
 
   onToken = (token, addresses) => {
+    
     axios.post('/api/stripe', {token, amount:(this.subTotal()*100)})
     .then(res => {
-      console.log('checkout response', res)
-      window.location.reload()
+      getData()
+      swal({
+        title: `Thank you for your purchase! ${this.props.user.user.firstname}`,
+        text: `Order: #${this.props.cart[0].cart_id}` ,
+        icon: "success",
+        
+      });
+      // window.location.reload()
+
     })
     .catch(error => {
       console.log("Payment Error: ", error);
@@ -130,17 +140,36 @@ class Cart extends Component {
             </div>
           </div>
         </main>
-        <footer>
-
+        <footer className="sneakerFoot">
+          <p> Copyright © 2019 SLC KiX. All rights reserved</p>
+          <div className="footerLinksContainer">
+            <p>About</p>
+            <p>|</p>
+            <p>Contact Us</p>
+            <p>|</p>
+            <p>FAQ</p>
+          </div>
         </footer>
       </div>
       
     )
     :(
-      <div>
-
+      <div className="cartPage">
+        
       <header className="cartHeader"></header>
+      <main className="cartMainEmpty">
       <h2>Cart is Empty!</h2>
+      </main>
+      <footer className="sneakerFoot">
+          <p> Copyright © 2019 SLC KiX. All rights reserved</p>
+          <div className="footerLinksContainer">
+            <p>About</p>
+            <p>|</p>
+            <p>Contact Us</p>
+            <p>|</p>
+            <p>FAQ</p>
+          </div>
+        </footer>
       </div>
     )
   }

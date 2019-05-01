@@ -105,8 +105,15 @@ class LoginRegister extends Component {
           </div>
 
         </main>
-        <footer>
-          
+        <footer className="sneakerFoot">
+          <p> Copyright © 2019 SLC KiX. All rights reserved</p>
+          <div className="footerLinksContainer">
+            <p>About</p>
+            <p>|</p>
+            <p>Contact Us</p>
+            <p>|</p>
+            <p>FAQ</p>
+          </div>
         </footer>
       </div>
 

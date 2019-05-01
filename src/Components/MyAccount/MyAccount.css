@@ -292,6 +292,10 @@
     position: relative
 }
 
+.firstNameInputBox input:focus {
+    color: black;   
+}
+
 .firstNameInputBox :nth-child(1) {
     font-size: 11px;
     /* position: relative; */
@@ -323,6 +327,10 @@
     margin-left: -10px;
     border: none;
     color: grey;
+}
+
+.lastNameInputBox input:focus {
+    color: black;   
 }
 
 .lastNameInputBox {
@@ -369,9 +377,7 @@
 }
 
 .emailInputBox input:focus {
-    color: black;
-    
-    
+    color: black;   
 }
 
 .emailInputBox {

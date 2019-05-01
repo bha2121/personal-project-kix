@@ -8,8 +8,9 @@ import { Carousel } from 'react-responsive-carousel';
 import jordanLogo2 from './logos/jordanLogo2.png'
 import nikeLogo from './logos/nikeLogo.png'
 import adidasLogo2 from './logos/adidasLogo2.png'
-import adcjordannikeupdated from './logos/adcjordannikeupdated.png'
+import adcjordannike3 from './logos/adcjordannike3.png'
 import shippingupdated2 from './logos/shippingupdated2.png'
+import { Link } from 'react-router-dom'
 
 import shoebanner3 from './logos/shoebanner3.png'
 // import headerLogo from './jordanHeader.jpeg'
@@ -77,14 +78,16 @@ class Landing extends Component {
                     <img src={shippingupdated2}/>
                 </div>
                 <div>
-                    <img src={adcjordannikeupdated}/>
+                    <img src={adcjordannike3}/>
                 </div>
         </Carousel>
 
         <div className="landingRowContainer">
           <div className="rowHeaderJ">
             <img src={jordanLogo2} alt=""/>
-            <p> SEE ALL </p>
+            <Link to='/browse' style={{textDecoration:"none", color:'black'}}>
+              <p > SEE ALL </p>
+            </Link>
           </div>
           <div className="jordanRow">
             {jordanArr.map((item,i) => {
@@ -95,7 +98,9 @@ class Landing extends Component {
 
           <div className="rowHeaderN">
             <img src={nikeLogo} alt=""/>
-            <p> SEE ALL </p>
+            <Link to='/browse' style={{textDecoration:"none", color:'black'}}>
+              <p> SEE ALL </p>
+            </Link>
           </div>
           <div className="nikeRow">
             {nikeArr.map((item,i) => {
@@ -106,7 +111,9 @@ class Landing extends Component {
           
             <div className="rowHeaderA">
               <img src={adidasLogo2} alt=""/>
+              <Link to='/browse' style={{textDecoration:"none", color:'black'}}>
               <p> SEE ALL </p>
+              </Link>
             </div>
           <div className="adidasRow">
             {adidasArr.map((item,i) => {
@@ -115,8 +122,15 @@ class Landing extends Component {
             })}
           </div>
         </div>
-        <footer>
-
+        <footer className="sneakerFoot">
+          <p> Copyright © 2019 SLC KiX. All rights reserved</p>
+          <div className="footerLinksContainer">
+            <p>About</p>
+            <p>|</p>
+            <p>Contact Us</p>
+            <p>|</p>
+            <p>FAQ</p>
+          </div>
         </footer>
 
       </div>

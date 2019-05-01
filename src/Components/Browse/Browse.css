@@ -56,8 +56,15 @@
     background: white;
     border: none;
     cursor: pointer;
-    padding-left: 25px;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
 
+}
+
+.allProducts:active {
+	transform: scale(0.90);
 }
 
 
@@ -68,6 +75,10 @@
     flex-direction: row;
     justify-content: space-between;
     padding-right: 100px;
+}
+
+.browseSort button:active {
+	transform: scale(0.90);
 }
 
 
@@ -90,10 +101,17 @@
     width: 290px;
 }
 
-.sortBy span {
+.sortBy p {
     margin-right: 10px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 12.5px
+    font-size: 12.5px;
+   padding-top: 1.8px
+}
+.sortBy span {
+   
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16.5px;
+   
 }
 
 
@@ -126,7 +144,20 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-right: 25px
+    padding-right: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding-left: 40px;
+    border: solid 1px black
+    
+}
+
+.categoryButton:active {
+	transform: scale(0.90);
+}
+
+.categoryButton:focus {
+    outline: none
 }
 
 
@@ -204,7 +235,8 @@
     justify-content: center;
     align-items: center;
     font-weight: 600;
-    animation: .45s brand-Zoom;
+    animation: .65s brand-Zoom;
+    cursor: pointer;
 }
 
 
@@ -226,13 +258,14 @@
     width: 25px
 }
 .toggledBrands button:focus img {
-    height: 34px;
-    width: 34px;
+    height: 35px;
+    width: 35px;
 }
 
 
 .toggledBrands button:hover {
-    background: rgb(230, 228, 228)
+    background: rgb(230, 228, 228);
+    
 }
 
 
@@ -243,28 +276,48 @@
     outline: none;
     font-size: 17px;
     font-weight: 600;
-    animation: .6s brandZoom;
+    border: solid 1px grey
+    
+    /* animation: .6s brandZoom; */
 }
 
-  @keyframes brandZoom {
+  /* @keyframes brandZoom {
     0% {
         transform: scale(.5);
     } 
-    /* 50%{
+    50%{
         transform: scale(.5)
-    } */
+    }
     100% {
         transform: none;
     }
-  }
+  }  */
+
+  .toggledBrands button:active {
+	transform: scale(0.90);
+}
 
 
 
 footer {
-    height: 80px;
+    display: flex;
+    flex-direction: row;
+    height: 70px;
     width: 100%;
     background-color: black;
     color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    align-items: center;
+    justify-content: space-around
+}
+
+.footerLinksContainer {
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around
 }
 
 

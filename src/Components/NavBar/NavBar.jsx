@@ -27,15 +27,17 @@ class NavBar extends Component {
       <nav>
         <div className="navContainer">
           <div className='leftnavitems'>
+            <Link to='/'>
             <img src={slckixRed2} alt=""/>
+            </Link>
             <input placeholder='Search for brand, model, etc.'/>
           </div>
           <div className='linksContainer'>
-            <Link to='/'>
-              <button>Home</button>
-            </Link>
             <Link to='/browse'>
               <button>Browse</button>
+            </Link>
+            <Link to='/'>
+              <button>About</button>
             </Link>
             <Link to='/myaccount'>
               <button>My Account</button>
@@ -54,9 +56,9 @@ class NavBar extends Component {
       <nav>
         <div className="navContainer">
           <div className='leftnavitems'>
-            <h1>
-              <img src={slckixRed2} alt=""/>
-            </h1>
+          <Link to='/'>
+            <img src={slckixRed2} alt=""/>
+            </Link>
             <input placeholder='Search for brand, model, etc.'/>
           </div>
           <div type= 'none' className='linksContainer'>
