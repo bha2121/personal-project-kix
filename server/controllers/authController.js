@@ -65,19 +65,7 @@ module.exports = {
         res.redirect(process.env.REACT_APP_REDIRECT)
     },
 
-    // editUser: (req, res) => {
-    //     console.log('did end point hit?')
-    //     let {firstname, lastname, email } = req.body;
-    //     const {id} = req.session.user;
-    //     const db = req.app.get('db');
-    //     const user = ([id, firstname, lastname, email])
-    //     db.edit_user(user).then((res) => {
-    //         return res.status(200).send(res)
-    //     })
-        
-    // },
-
-
+    
     editProfile: async (req, res) => {
         let {id, firstname, lastname, email} = req.body;
         // const {id} = req.session.user;
@@ -94,12 +82,3 @@ module.exports = {
     
 }
 
-
-// if(password == ''){
-//     let resp = await db.auth.get_password({user_id})
-//     password = resp[0].password
-// } else {
-//     let salt = bcrypt.genSaltSync(10);
-//     let hash = bcrypt.hashSync(password, salt);
-//     password = hash
-// }

@@ -238,7 +238,7 @@
     font-family: 'Montserrat', sans-serif;
   }
   
-  .swal-button:hover {
+  .swal-button:not([disabled]):hover {
     background: black;
     
   }

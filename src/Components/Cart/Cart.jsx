@@ -34,22 +34,24 @@ class Cart extends Component {
   
   
 
-
-
-
-  onToken = (token, addresses) => {
+  onToken = async (token, addresses) => {
     
-    axios.post('/api/stripe', {token, amount:(this.subTotal()*100)})
+    await axios.post('/api/stripe', {token, amount:(this.subTotal()*100)})
     .then(res => {
       getData()
       swal({
-        title: `Thank you for your purchase! ${this.props.user.user.firstname}`,
+        title: `Thank you for your purchase!`,
         text: `Order: #${this.props.cart[0].cart_id}` ,
         icon: "success",
         
       });
-      // window.location.reload()
 
+    })
+    getData()
+    await axios.get('/api/cart')
+    .then(res => {
+      
+      this.props.setCart(res.data)
     })
     .catch(error => {
       console.log("Payment Error: ", error);
@@ -58,10 +60,6 @@ class Cart extends Component {
 }
 
 
-
-
-
-  
   
 
   render() {

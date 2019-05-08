@@ -22,8 +22,8 @@ class Sneaker extends Component {
       quantity: '',
       shoe_id: '',
       sizeArr: [],
-      selected: ''
-      // shoe: []
+      selected: '',
+      sizeToCart: ''
     }
   }
 
@@ -44,8 +44,7 @@ class Sneaker extends Component {
         releasedate: res.data[0].releasedate,
         sellingprice: res.data[0].sellingprice,
         quantity: res.data[0].quantity,
-        shoe_id: res.data[0].shoe_id
-        // shoe: res.data[0]
+        shoe_id: res.data[0].shoe_id,
       });
     })
     
@@ -83,14 +82,16 @@ class Sneaker extends Component {
     })
   };
 
-  handleAddToCart(shoe_id){
+  handleAddToCart(){
     console.log('shoeiii', shoe_id)
+    const {shoe_id} = this.state
     axios.post('/api/addtocart', {shoe_id})
     .then(res =>{
       this.props.setCart(res.data)
-      
+      console.log("letsee", res.data)
       swal({
-        title: `${res.data[0].brand} ${res.data[0].model} ${res.data[0].colorway} Size: ${res.data[0].size}`,
+        // title: `${res.data[0].brand} ${res.data[0].model} ${res.data[0].colorway} Size: ${res.data[0].size}`,
+        title: `${this.state.brand} ${this.state.model} ${this.state.colorway} Size: ${this.state.size}`,
         text: `Was Added to Cart` ,
         icon: "success",
       })
@@ -131,7 +132,7 @@ class Sneaker extends Component {
                 }).sort((a,b)=> a.size*1 - b.size*1)}
               </div>
               <div className="addToCartButton">
-                <button onClick={()=> {this.handleAddToCart(shoe_id)}}> Add to cart</button>
+                <button onClick={()=> {this.handleAddToCart()}}> Add to cart</button>
               </div>
             </div>
             <div className="sneakerDescriptionContainer">

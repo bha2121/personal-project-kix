@@ -145,8 +145,8 @@ class MyAccount extends Component {
                     </div>
                     <div className="esButtons">
                       <button onClick={this.handleCancelEdit}> Cancel </button>
-                      <div className="saveButton">
-                        <button onClick={() => this.updateUser()}> Save </button>
+                    <div className="saveButton">
+                      <button onClick={() => this.updateUser()}> Save </button>
                       </div>
                     </div>             
                   </div>

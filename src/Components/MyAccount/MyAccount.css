@@ -69,6 +69,10 @@
     background-color: #F9F9F9;
 }
 
+.myAccountSidebarLinks p{
+    cursor: pointer;
+}
+
 
 .MyProfileBody {
     display: flex;
