@@ -118,7 +118,6 @@
 .flagTriangle {
     width: 0;
     height: 0;
-    /* border-bottom: 10px solid rgb(248, 110, 110); */
     border-bottom: 10px solid rgb(177, 13, 13);
     border-left: 10px solid transparent;
     margin-top: -10px

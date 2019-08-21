@@ -1,4 +1,4 @@
-ccreate table shoes (
+create table shoes (
   shoe_id SERIAL PRIMARY KEY,
   brand varchar(80),
   model varchar(80),
